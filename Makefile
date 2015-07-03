@@ -1,5 +1,6 @@
 OBJS_USER = Source/main.cpp \
-	    Source/Game.cpp
+	    Source/Game.cpp \
+	    Source/Props/Room.cpp
 
 
 #OBJS specifies which files to compile as part of the project

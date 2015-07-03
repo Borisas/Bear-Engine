@@ -19,11 +19,6 @@ int main( int argc, char* args[] )
         Wizard::getInstance()->OnQuit();
         return 0;
     }
-
-    Wizard::getInstance()->SetActionOnEvent(SDL_SCANCODE_W, [&](){
-                                            std::cout << "pressed W." << std::endl;});
-    Wiz->SetActionOnEvent(SDL_SCANCODE_SPACE, [&](){ std::cout << "pressed spacebar." << std::endl;});
-
     Wizard::getInstance()->ReplaceView(new Game);
 
     Wizard::getInstance()->RunGame();

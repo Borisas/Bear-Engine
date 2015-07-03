@@ -9,6 +9,9 @@ public:
         this->self.x = x;
         this->self.y = y;
     };
+    virtual Pos getPosition(){
+	return {self.x, self.y};
+    };
     virtual void setScale(float sx, float sy){
         this->scaleX = sx;
         this->scaleY = sy;
@@ -23,7 +26,7 @@ public:
     virtual void setAnchorPoint(float x, float y){
         offset.x = x;
         offset.y = y;
-    }
+    };
 protected:
     Square self;
     Pos offset = {0.5,0.5};

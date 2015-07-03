@@ -42,6 +42,9 @@ public:
     void ReplaceView(ViewPoint* next);
     void PushView(ViewPoint* next);
     void PopView();
+
+    EventHandler* GetEventHandler();
+
 private:
     stack<ViewPoint*> Viewer;
 

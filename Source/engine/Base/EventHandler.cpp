@@ -17,5 +17,18 @@ void EventHandler::Update(){
             }
         }
     }
+    if(keystates[SDL_SCANCODE_W]){
+	onW();
+    }
+    if(keystates[SDL_SCANCODE_D]){
+	onD();
+    }
+    if(keystates[SDL_SCANCODE_S]){
+	onS();
+    }
+    if(keystates[SDL_SCANCODE_A]){
+	onA();
+    }
+    
 }
 

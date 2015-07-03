@@ -101,6 +101,9 @@ void Wizard::SetWindowSize(Size _new){
 void Wizard::SetActionOnEvent(Uint32 EventType, std::function<void ()> action){
     ev->KeyActionMap[EventType] = action;
 }
+EventHandler* Wizard::GetEventHandler(){
+    return ev;
+}
 void Wizard::ReplaceView(ViewPoint * next){
     if(Viewer.size() > 0)
         Viewer.pop();

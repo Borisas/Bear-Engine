@@ -17,6 +17,11 @@ public:
     void ClearFunctions();
 
     std::function<void()> onQuit = [&](){};
+    
+    std::function<void()> onW = [&](){};
+    std::function<void()> onD = [&](){};
+    std::function<void()> onS = [&](){};
+    std::function<void()> onA = [&](){};
 
     KMap KeyActionMap;
 
