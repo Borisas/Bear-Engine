@@ -2,6 +2,7 @@
 #define _GAME_H_
 
 #include "engine/BEngineCore.h"
+#include "Entities/Player.h"
 #include <iostream>
 
 class Game : public ViewPoint{
@@ -15,7 +16,7 @@ public:
     void draw();
 
 private:
-    Sprite* Player;
+    Player* objPlayer;
     Size vsize = Wizard::getInstance()->GetWindowSize();
 
 };
