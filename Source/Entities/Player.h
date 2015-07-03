@@ -7,7 +7,7 @@ class Player : public Sprite{
 public:
     static Player* create(){
         auto r = new Player;
-        if(r->init("assets/player.png")){
+        if(r->init("Assets/player.png")){
             return r;
         }
         delete r;
