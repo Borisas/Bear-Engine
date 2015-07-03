@@ -23,6 +23,6 @@ void Game::update(){
 }
 void Game::draw(){
     if(objPlayer){
-	       objPlayer->draw();
+	objPlayer->draw();
     }
 }

@@ -16,7 +16,7 @@ Room::~Room(){
 }
 Room* Room::create(int w, int h){
     auto r = new Room(w,h);
-    r->loadTileSet(0);
+    //r->loadTileSet(0);
     return r;
 }
 void Room::draw(){

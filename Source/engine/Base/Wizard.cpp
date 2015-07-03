@@ -66,31 +66,36 @@ void Wizard::OnQuit(){
     cout << "Quit" << endl;
 }
 void Wizard::RunGame(){
-    while(GameLoop){
-		lastTick = SDL_GetTicks();
-
-        glClearColor(0,0,0,1);
+    int countedFrames = 0;
+    fpsTimer.start();
+    while(GameLoop){ 
+	capTimer.start();
+	glClearColor(0,0,0,1);
         glClear(GL_COLOR_BUFFER_BIT);
 
         ev->Update();
+
+	float avgFPS = countedFrames / ( fpsTimer.getTicks() / 1000.f );
+	if( avgFPS > 2000000 ){
+	    avgFPS = 0;
+	}
         if(Viewer.size() > 0){
             Viewer.top()->update();
             Viewer.top()->draw();
         }
-
-
-        currentTick = SDL_GetTicks();
-        sleep = milliPeriod - (currentTick - lastTick);
-        if(sleep < 0)  sleep = 0;
-        SDL_Delay(sleep);
-		SDL_GL_SwapWindow(GameWindow);
-
+	cout << "Update" << endl;
+	++countedFrames;
+	int frameTicks = capTimer.getTicks();
+	if( frameTicks < SCREEN_TICK_PER_FRAME ){
+	    SDL_Delay( SCREEN_TICK_PER_FRAME - frameTicks );
+	}   
+	SDL_GL_SwapWindow(GameWindow);
     }
 }
 void Wizard::SetFPS(int FPS){
     this->FPS = FPS;
-    double period = 1000 / (double)FPS;
-    int milliPeriod = (int)period;
+    SCREEN_TICK_PER_FRAME = 1000 / FPS;
+
 }
 Size Wizard::GetWindowSize(){
     return Window;

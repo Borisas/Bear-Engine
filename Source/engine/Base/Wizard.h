@@ -8,6 +8,7 @@
 #include "Structures.h"
 #include "EventHandler.h"
 #include "../ObjVariables/ViewPoint.h"
+#include "Timer.h"
 #include <iostream>
 #include <memory>
 #include <string>
@@ -52,12 +53,10 @@ private:
     SDL_Window* GameWindow = NULL;
     Size Window = {1024,768};
     int FPS = 60;
-	double period = 1000 / (double)FPS;
-    int milliPeriod = (int)period;
-    int sleep;
-
-	Uint32 lastTick;
-    Uint32 currentTick;
+    int SCREEN_TICK_PER_FRAME = 1000 / FPS;
+    LTimer fpsTimer;
+    LTimer capTimer; 
+    
 
     EventHandler * ev = EventHandler::create();
 };
