@@ -6,7 +6,7 @@
 #include "SDL2/SDL_opengl.h"
 #include "Structures.h"
 #include "EventHandler.h"
-#include "../ObjVaribles/ViewPoint.h"
+#include "../ObjVariables/ViewPoint.h"
 #include <iostream>
 #include <memory>
 #include <string>

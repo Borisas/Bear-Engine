@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-#include "core/BEngineCore.h"
+#include "engine/BEngineCore.h"
 
 #define Wiz Wizard::getInstance()
 

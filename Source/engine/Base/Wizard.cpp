@@ -69,8 +69,8 @@ void Wizard::RunGame(){
 
         ev->Update();
         if(Viewer.size() > 0){
-            Viewer.top->update();
-            Viewer.top->draw();
+            Viewer.top()->update();
+            Viewer.top()->draw();
         }
 
 
