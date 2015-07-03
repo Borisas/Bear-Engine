@@ -6,20 +6,22 @@
 #include "SDL2/SDL_opengl.h"
 #include "../Base/Base.h"
 #include "../Base/Structures.h"
+#include "ObjBase.h"
+#include <iostream>
+using namespace std;
 
-class Sprite{
+class Sprite : public ObjBase{
 
 public:
-    Sprite(const char* image);
+    Sprite();
     ~Sprite();
+    static Sprite* create(const char* file);
     virtual void draw();
-    Square getSquare();
 protected:
-    virtual void init(const char* image);
+    virtual bool init(const char*);
 
 private:
     GLTexture self_texture;
-    Square self;
 
 };
 

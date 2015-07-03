@@ -1,4 +1,6 @@
-OBJS_USER = Source/main.cpp
+OBJS_USER = Source/main.cpp \
+	    Source/Game.cpp
+
 
 #OBJS specifies which files to compile as part of the project 
 OBJS_BASE = Source/engine/Base/Base.cpp \

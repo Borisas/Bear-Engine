@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "engine/BEngineCore.h"
+#include "Game.h"
 
 #define Wiz Wizard::getInstance()
 
@@ -20,8 +21,10 @@ int main( int argc, char* args[] )
     }
 
     Wizard::getInstance()->SetActionOnEvent(SDL_SCANCODE_W, [&](){
-                                            std::cout << "pressed W" << std::endl;});
-    Wiz->SetActionOnEvent(SDL_SCANCODE_SPACE, [&](){ std::cout << "pressed spacebar" << std::endl;});
+                                            std::cout << "pressed W." << std::endl;});
+    Wiz->SetActionOnEvent(SDL_SCANCODE_SPACE, [&](){ std::cout << "pressed spacebar." << std::endl;});
+
+    Wizard::getInstance()->ReplaceView(new Game);
 
     Wizard::getInstance()->RunGame();
     Wizard::getInstance()->OnQuit();

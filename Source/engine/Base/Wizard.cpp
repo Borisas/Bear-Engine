@@ -22,7 +22,11 @@ bool Wizard::InitGame(){
 		GameLoop = false;
 		return false;
 	}
-
+    if(IMG_Init(IMG_INIT_PNG) == -1){
+	cout << "SDL_ERROR: " << SDL_GetError() << endl;
+	GameLoop = false;
+	return false;
+    }
     cout << "Iniatialising Stage:1" << endl;
 	GameWindow = SDL_CreateWindow(GameName.c_str(), SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED, Window.width, Window.height, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
 
@@ -57,6 +61,7 @@ void Wizard::OnQuit(){
     glDisable(GL_BLEND);
 	SDL_DestroyWindow(GameWindow);
     SDL_Quit();
+    IMG_Quit();
     //printf("Quit");
     cout << "Quit" << endl;
 }
