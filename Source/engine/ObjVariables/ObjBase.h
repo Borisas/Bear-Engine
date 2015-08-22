@@ -3,7 +3,7 @@
 
 #include "../Base/Structures.h"
 
-class ObjBase{
+class interface{
 public:
     virtual void setPosition(float x, float y){
         this->self.x = x;
@@ -27,12 +27,14 @@ public:
         offset.x = x;
         offset.y = y;
     };
+    virtual void draw(){
+
+    };
 protected:
     Square self;
     Pos offset = {0.5,0.5};
     float scaleX = 1;
     float scaleY = 1;
-
 };
 
 #endif
