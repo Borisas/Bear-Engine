@@ -17,80 +17,79 @@ Wizard::Wizard(){
 }
 
 bool Wizard::InitGame(){
-    if(SDL_Init( SDL_INIT_EVERYTHING ) == -1){
-        cout << "SDL_ERROR: " << SDL_GetError() << endl;
-		GameLoop = false;
-		return false;
-	}
-    if(IMG_Init(IMG_INIT_PNG) == -1){
-	cout << "SDL_ERROR: " << SDL_GetError() << endl;
-	GameLoop = false;
-	return false;
-    }
-    cout << "Iniatialising Stage:1" << endl;
-	GameWindow = SDL_CreateWindow(GameName.c_str(), SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED, Window.width, Window.height, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
+  if(SDL_Init( SDL_INIT_EVERYTHING ) == -1){
+    cout << "SDL_ERROR: " << SDL_GetError() << endl;
+    GameLoop = false;
+    return false;
+  }
+  if(IMG_Init(IMG_INIT_PNG) == -1){
+    cout << "SDL_ERROR: " << SDL_GetError() << endl;
+    GameLoop = false;
+    return false;
+  }
+  cout << "Iniatialising Stage:1" << endl;
+  GameWindow = SDL_CreateWindow(GameName.c_str(), SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED, Window.width, Window.height, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
 
-	if(GameWindow == NULL)
-    {
-        GameLoop=false;
-        cout << "SDL_ERROR: " << SDL_GetError() << endl;
-        return false;
-    }
-    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER,1);
-    Context = SDL_GL_CreateContext(GameWindow);
-    glEnable(GL_TEXTURE_2D);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+  if(GameWindow == NULL){
+    GameLoop=false;
+    cout << "SDL_ERROR: " << SDL_GetError() << endl;
+    return false;
+  }
+  SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER,1);
+  Context = SDL_GL_CreateContext(GameWindow);
+  glEnable(GL_TEXTURE_2D);
+  glEnable(GL_BLEND);
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    cout << "Iniatialising Stage:2" << endl;
-    cout << "A" << endl;
-	glOrtho(0,Window.width, Window.height,0,-1,1);
+  cout << "Iniatialising Stage:2" << endl;
+  cout << "A" << endl;
+  glOrtho(0,Window.width, Window.height,0,-1,1);
 
-    //BASE EVENTS:
+  //BASE EVENTS:
 
 
-    this->ev->onQuit = [&](){
-        this->GameLoop = false;
-    };
+  this->ev->onQuit = [&](){
+  this->GameLoop = false;
+  };
 
-    //====
+  //====
 
-    return true;
+  return true;
 }
 void Wizard::OnQuit(){
-    glDisable(GL_BLEND);
-	SDL_DestroyWindow(GameWindow);
-    SDL_Quit();
-    IMG_Quit();
-    //printf("Quit");
-    cout << "Quit" << endl;
+  glDisable(GL_BLEND);
+  SDL_DestroyWindow(GameWindow);
+  SDL_Quit();
+  IMG_Quit();
+  //printf("Quit");
+  cout << "Quit" << endl;
 }
 void Wizard::RunGame(){
-    int countedFrames = 0;
-    fpsTimer.start();
-    while(GameLoop){ 
-	capTimer.start();
-	glClearColor(0,0,0,1);
-        glClear(GL_COLOR_BUFFER_BIT);
+  int countedFrames = 0;
+  fpsTimer.start();
+  while(GameLoop){
+    capTimer.start();
+    glClearColor(0,0,0,1);
+    glClear(GL_COLOR_BUFFER_BIT);
 
-        ev->Update();
+    ev->Update();
 
-	float avgFPS = countedFrames / ( fpsTimer.getTicks() / 1000.f );
-	if( avgFPS > 2000000 ){
-	    avgFPS = 0;
-	}
-        if(Viewer.size() > 0){
-            Viewer.top()->update();
-            Viewer.top()->draw();
-        }
-	cout << "Update" << endl;
-	++countedFrames;
-	int frameTicks = capTimer.getTicks();
-	if( frameTicks < SCREEN_TICK_PER_FRAME ){
-	    SDL_Delay( SCREEN_TICK_PER_FRAME - frameTicks );
-	}   
-	SDL_GL_SwapWindow(GameWindow);
+    float avgFPS = countedFrames / ( fpsTimer.getTicks() / 1000.f );
+    if( avgFPS > 2000000 ){
+      avgFPS = 0;
     }
+    if(Viewer.size() > 0){
+      Viewer.top()->update();
+      Viewer.top()->draw();
+    }
+    cout << "Update: " << avgFPS << endl;
+    ++countedFrames;
+    int frameTicks = capTimer.getTicks();
+    if( frameTicks < SCREEN_TICK_PER_FRAME ){
+      SDL_Delay( SCREEN_TICK_PER_FRAME - frameTicks );
+    }
+    SDL_GL_SwapWindow(GameWindow);
+  }
 }
 void Wizard::SetFPS(int FPS){
     this->FPS = FPS;

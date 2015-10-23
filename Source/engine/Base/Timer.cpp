@@ -12,15 +12,15 @@ LTimer::LTimer()
 
 void LTimer::start()
 {
-    //Start the timer
-    mStarted = true;
+  //Start the timer
+  mStarted = true;
 
-    //Unpause the timer
-    mPaused = false;
+  //Unpause the timer
+  mPaused = false;
 
-    //Get the current clock time
-    mStartTicks = SDL_GetTicks();
-	mPausedTicks = 0;
+  //Get the current clock time
+  mStartTicks = SDL_GetTicks();
+  mPausedTicks = 0;
 }
 
 void LTimer::stop()
@@ -31,9 +31,9 @@ void LTimer::stop()
     //Unpause the timer
     mPaused = false;
 
-	//Clear tick variables
-	mStartTicks = 0;
-	mPausedTicks = 0;
+  	//Clear tick variables
+  	mStartTicks = 0;
+  	mPausedTicks = 0;
 }
 
 void LTimer::pause()
@@ -46,7 +46,7 @@ void LTimer::pause()
 
         //Calculate the paused ticks
         mPausedTicks = SDL_GetTicks() - mStartTicks;
-		mStartTicks = 0;
+		    mStartTicks = 0;
     }
 }
 

@@ -3,13 +3,13 @@
 Sprite::Sprite(){
 }
 Sprite::~Sprite(){
-
+  if(auto_remove)
+    delete this;
 }
 Sprite* Sprite::create(const char* file){
     auto r = new Sprite;
     if(r->init(file)){
-
-		return r;
+		    return r;
     }
     delete r;
     return nullptr;

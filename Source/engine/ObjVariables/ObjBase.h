@@ -10,7 +10,7 @@ public:
         this->self.y = y;
     };
     virtual Pos getPosition(){
-	return {self.x, self.y};
+	       return {self.x, self.y};
     };
     virtual void setScale(float sx, float sy){
         this->scaleX = sx;
@@ -35,6 +35,7 @@ protected:
     Pos offset = {0.5,0.5};
     float scaleX = 1;
     float scaleY = 1;
+    bool auto_remove;
 };
 
 #endif

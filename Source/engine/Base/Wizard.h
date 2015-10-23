@@ -22,29 +22,29 @@ using namespace std;
 class Wizard{
 
 public:
-    static std::shared_ptr< Wizard > getInstance();
+  static std::shared_ptr< Wizard > getInstance();
 
-    Wizard();
-    string GameName = "BEngine";
+  Wizard();
+  string GameName = "BEngine";
 
-    bool InitGame();
-    void OnQuit();
+  bool InitGame();
+  void OnQuit();
 
-    void RunGame();
-    void SetFPS(int FPS);
+  void RunGame();
+  void SetFPS(int FPS);
 
-    Size GetWindowSize();
-    void SetWindowSize(Size _new);
+  Size GetWindowSize();
+  void SetWindowSize(Size _new);
 
-	bool GameLoop = true;
+  bool GameLoop = true;
 
-    void SetActionOnEvent(Uint32 EventType, std::function<void ()> action);
+  void SetActionOnEvent(Uint32 EventType, std::function<void ()> action);
 
-    void ReplaceView(ViewPoint* next);
-    void PushView(ViewPoint* next);
-    void PopView();
+  void ReplaceView(ViewPoint* next);
+  void PushView(ViewPoint* next);
+  void PopView();
 
-    EventHandler* GetEventHandler();
+  EventHandler* GetEventHandler();
 
 private:
     stack<ViewPoint*> Viewer;
@@ -52,11 +52,11 @@ private:
     SDL_GLContext Context;
     SDL_Window* GameWindow = NULL;
     Size Window = {1024,768};
-    int FPS = 60;
+    int FPS = 62;
     int SCREEN_TICK_PER_FRAME = 1000 / FPS;
     LTimer fpsTimer;
-    LTimer capTimer; 
-    
+    LTimer capTimer;
+
 
     EventHandler * ev = EventHandler::create();
 };
