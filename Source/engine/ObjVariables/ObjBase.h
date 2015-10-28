@@ -30,12 +30,15 @@ public:
     virtual void draw(){
 
     };
+    virtual void setAutoRemove(bool to){
+        auto_remove = to;
+    }
 protected:
     Square self;
     Pos offset = {0.5,0.5};
     float scaleX = 1;
     float scaleY = 1;
-    bool auto_remove;
+    bool auto_remove = false;
 };
 
 #endif

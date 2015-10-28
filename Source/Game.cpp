@@ -1,7 +1,8 @@
 #include "Game.h"
 
 Game::Game(){
-    objPlayer = Player::create();
+    objPlayer = new Player();
+    objPlayer->setAutoRemove(true);
     objPlayer->setPosition(vsize.width/2, vsize.height/2);
 
     first = Room::create(10,10);
@@ -13,9 +14,9 @@ Game::Game(){
 }
 Game::~Game(){
     if(objPlayer)
-	delete objPlayer;
+	   delete objPlayer;
     if(first)
-	delete first;
+	   delete first;
 }
 
 void Game::update(){
@@ -23,6 +24,6 @@ void Game::update(){
 }
 void Game::draw(){
     if(objPlayer){
-	objPlayer->draw();
+	       objPlayer->draw();
     }
 }

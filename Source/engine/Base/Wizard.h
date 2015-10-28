@@ -46,17 +46,21 @@ public:
 
   EventHandler* GetEventHandler();
 
+  float getFPSMultiplier();
+  float getDelayTime();
+  float getDefaultDelayTime();
+
 private:
     stack<ViewPoint*> Viewer;
 
     SDL_GLContext Context;
     SDL_Window* GameWindow = NULL;
     Size Window = {1024,768};
-    int FPS = 62;
+    int FPS = 60;
     int SCREEN_TICK_PER_FRAME = 1000 / FPS;
     LTimer fpsTimer;
     LTimer capTimer;
-
+    float dt = 0;
 
     EventHandler * ev = EventHandler::create();
 };

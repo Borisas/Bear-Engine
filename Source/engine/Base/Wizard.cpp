@@ -82,14 +82,24 @@ void Wizard::RunGame(){
       Viewer.top()->update();
       Viewer.top()->draw();
     }
-    cout << "Update: " << avgFPS << endl;
+    // cout << "Update: " << avgFPS << endl;
     ++countedFrames;
     int frameTicks = capTimer.getTicks();
+    this->dt = 1/avgFPS;
     if( frameTicks < SCREEN_TICK_PER_FRAME ){
       SDL_Delay( SCREEN_TICK_PER_FRAME - frameTicks );
     }
     SDL_GL_SwapWindow(GameWindow);
   }
+}
+float Wizard::getFPSMultiplier(){
+    return (dt / (1/60.f));
+}
+float Wizard::getDelayTime(){
+    return dt;
+}
+float Wizard::getDefaultDelayTime(){
+    return SCREEN_TICK_PER_FRAME;
 }
 void Wizard::SetFPS(int FPS){
     this->FPS = FPS;

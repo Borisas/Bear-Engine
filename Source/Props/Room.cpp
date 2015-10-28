@@ -3,7 +3,7 @@
 Room::Room(int w, int h){
     room = new Tile*[h];
     for(unsigned int i = 0; i < w; i++){
-	room[i] = new Tile[w];
+	       room[i] = new Tile[w];
     }
     width = w;
     height = h;
@@ -22,7 +22,7 @@ Room* Room::create(int w, int h){
 void Room::draw(){
     for(unsigned int i = 0; i < width; i++){
 	for(unsigned int j = 0; j < height; j++){
-	   room[i][j].img->draw(); 
+	   room[i][j].img->draw();
 	}
     }
 }
