@@ -3,35 +3,44 @@
 Sprite::Sprite(){
 }
 Sprite::~Sprite(){
-  if(auto_remove)
-    delete this;
 }
-Sprite* Sprite::create(const char* file){
-    auto r = new Sprite;
-    if(r->init(file)){
-		    return r;
+bool Sprite::operator==(int t){
+    if((t == 0 || t == NULL)){
+        if(texture_loaded)
+            return false;
+        return true;
     }
-    delete r;
-    return nullptr;
+    return false;
+}
+bool Sprite::operator!=(int t){
+    if(t == 0 || t == NULL){
+        if(texture_loaded)
+            return true;
+        return false;
+    }
+    return true;
 }
 void Sprite::draw(){
-    glColor3f(1,1,1);
-    glBindTexture(GL_TEXTURE_2D, self_texture);
-    glBegin(GL_QUADS);
-    glTexCoord2f(0,0);
-    glVertex3f(self.x - (offset.x * self.width), self.y - (offset.y * self.height),0);
-    glTexCoord2f(1,0);
-    glVertex3f((self.x + self.width) - (offset.x * self.width), self.y - (offset.y * self.height),0);
-    glTexCoord2f(1,1);
-    glVertex3f((self.x + self.width) - (offset.x * self.width), (self.y + self.height) - (offset.y * self.height),0);
-    glTexCoord2f(0,1);
-    glVertex3f(self.x - (offset.x * self.width), (self.y+self.height) - (offset.y * self.height),0);
-    glEnd();
+    if(texture_loaded){
+        glColor3f(1,1,1);
+        glBindTexture(GL_TEXTURE_2D, self_texture);
+        glBegin(GL_QUADS);
+        glTexCoord2f(0,0);
+        glVertex3f(self.x - (offset.x * self.width), self.y - (offset.y * self.height),0);
+        glTexCoord2f(1,0);
+        glVertex3f((self.x + self.width) - (offset.x * self.width), self.y - (offset.y * self.height),0);
+        glTexCoord2f(1,1);
+        glVertex3f((self.x + self.width) - (offset.x * self.width), (self.y + self.height) - (offset.y * self.height),0);
+        glTexCoord2f(0,1);
+        glVertex3f(self.x - (offset.x * self.width), (self.y+self.height) - (offset.y * self.height),0);
+        glEnd();
+    }
 }
-bool Sprite::init(const char* file){
+bool Sprite::initWithFile(const char* file){
   SDL_Surface* image;
   image = IMG_Load(file);
   if(image){
+    texture_loaded = true;
     GLenum texture_format;
     glGenTextures(1,&self_texture);
     glBindTexture(GL_TEXTURE_2D,self_texture);

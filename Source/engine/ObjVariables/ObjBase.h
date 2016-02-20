@@ -27,18 +27,13 @@ public:
         offset.x = x;
         offset.y = y;
     };
-    virtual void draw(){
-
-    };
-    virtual void setAutoRemove(bool to){
-        auto_remove = to;
-    }
+    virtual void draw(){};
+    virtual bool init(){};
 protected:
     Square self;
     Pos offset = {0.5,0.5};
     float scaleX = 1;
     float scaleY = 1;
-    bool auto_remove = false;
 };
 
 #endif

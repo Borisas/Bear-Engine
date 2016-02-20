@@ -1,13 +1,14 @@
 #include "Player.h"
 
 Player::Player(){
-    this->init("Assets/player.png");
 }
 Player::~Player(){
-    if(auto_remove)
-        delete this;
 }
-
+bool Player::init(){
+    if(!Sprite::initWithFile("Assets/player.png"))
+        return false;
+    return true;
+}
 void Player::move(int direction){
     switch(direction){
         case 1:

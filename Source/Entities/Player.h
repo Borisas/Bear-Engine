@@ -11,6 +11,8 @@ public:
     ~Player();
     void move(int direction);
 
+    bool init() override;
+
 private:
     bool autoremove = false;
     float movementSpeed = 2.5f;

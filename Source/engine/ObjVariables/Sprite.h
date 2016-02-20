@@ -15,12 +15,18 @@ class Sprite : public interface{
 public:
     Sprite();
     ~Sprite();
-    static Sprite* create(const char* file);
+
+    virtual bool initWithFile(const char*);
+
     virtual void draw();
+
+    bool operator==(int t);
+    bool operator!=(int t);
 protected:
-    virtual bool init(const char*);
+
 
 private:
+    bool texture_loaded = false;
     GLTexture self_texture;
 
 };
