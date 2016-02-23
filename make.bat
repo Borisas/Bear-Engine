@@ -1,1 +1,1 @@
-mingw32-make.exe -f make_windows
+mingw32-make.exe -f make_windows.mk

@@ -1,6 +1,5 @@
 OBJS_USER = Source/main.cpp \
 	    Source/Game.cpp \
-	    Source/Props/Room.cpp \
 		Source/Entities/Player.cpp
 
 
