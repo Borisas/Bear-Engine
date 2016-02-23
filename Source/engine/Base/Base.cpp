@@ -1,6 +1,6 @@
 #include "Base.h"
 
-GLuint Base::loadImage(const char* file){
+GLuint BearEngine::Base::loadImage(const char* file){
     SDL_Surface* image = SDL_LoadBMP(file);
     GLuint texture;
     glGenTextures(1,&texture);
@@ -12,7 +12,7 @@ GLuint Base::loadImage(const char* file){
     return texture;
 }
 
-void Base::draw(GLuint texture, Square pos){
+void BearEngine::Base::draw(GLuint texture, Square pos){
     glColor3f(1,1,1);
     glBindTexture(GL_TEXTURE_2D, texture);
     glBegin(GL_QUADS);
@@ -27,10 +27,10 @@ void Base::draw(GLuint texture, Square pos){
     glEnd();
 }
 
-Square Base::cSquare(float x, float y, float width, float height){
+BearEngine::Square BearEngine::Base::cSquare(float x, float y, float width, float height){
     return {x,y,width,height};
 }
-GLuint Base::SDLSurfaceToTexture(SDL_Surface* surface){
+GLuint BearEngine::Base::SDLSurfaceToTexture(SDL_Surface* surface){
     GLuint texture;
     GLint nOfColors;
     GLenum texture_format;

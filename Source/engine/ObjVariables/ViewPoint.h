@@ -1,5 +1,5 @@
-#ifndef _VIEWPOINT_H_
-#define _VIEWPOINT_H_
+#ifndef BE_VIEWPOINT_H
+#define BE_VIEWPOINT_H
 
 class ViewPoint{
 public:

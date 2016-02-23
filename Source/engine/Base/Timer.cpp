@@ -1,6 +1,6 @@
 #include "Timer.h"
 
-LTimer::LTimer()
+BearEngine::LTimer::LTimer()
 {
     //Initialize the variables
     mStartTicks = 0;
@@ -10,7 +10,7 @@ LTimer::LTimer()
     mStarted = false;
 }
 
-void LTimer::start()
+void BearEngine::LTimer::start()
 {
   //Start the timer
   mStarted = true;
@@ -23,7 +23,7 @@ void LTimer::start()
   mPausedTicks = 0;
 }
 
-void LTimer::stop()
+void BearEngine::LTimer::stop()
 {
     //Stop the timer
     mStarted = false;
@@ -36,7 +36,7 @@ void LTimer::stop()
   	mPausedTicks = 0;
 }
 
-void LTimer::pause()
+void BearEngine::LTimer::pause()
 {
     //If the timer is running and isn't already paused
     if( mStarted && !mPaused )
@@ -50,7 +50,7 @@ void LTimer::pause()
     }
 }
 
-void LTimer::unpause()
+void BearEngine::LTimer::unpause()
 {
     //If the timer is running and paused
     if( mStarted && mPaused )
@@ -66,7 +66,7 @@ void LTimer::unpause()
     }
 }
 
-Uint32 LTimer::getTicks()
+Uint32 BearEngine::LTimer::getTicks()
 {
 	//The actual timer time
 	Uint32 time = 0;
@@ -90,13 +90,13 @@ Uint32 LTimer::getTicks()
     return time;
 }
 
-bool LTimer::isStarted()
+bool BearEngine::LTimer::isStarted()
 {
 	//Timer is running and paused or unpaused
     return mStarted;
 }
 
-bool LTimer::isPaused()
+bool BearEngine::LTimer::isPaused()
 {
 	//Timer is running and paused
     return mPaused && mStarted;

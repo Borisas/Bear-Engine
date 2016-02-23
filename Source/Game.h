@@ -5,6 +5,8 @@
 #include "Entities/Player.h"
 #include <iostream>
 
+USING_NS_BE;
+
 class Game : public ViewPoint{
 
 public:

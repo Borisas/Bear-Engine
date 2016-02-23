@@ -1,36 +1,38 @@
-#ifndef _TIMER_H_
-#define _TIMER_H_
+#ifndef BE_TIMER_H_
+#define BE_TIMER_H_
 
 #include <SDL2/SDL.h>
 
-class LTimer
-{
-public:
-    //Initializes variables
-    LTimer();
+namespace BearEngine{
 
-    //The various clock actions
-    void start();
-    void stop();
-    void pause();
-    void unpause();
+    class LTimer{
+    public:
+        //Initializes variables
+        LTimer();
 
-    //Gets the timer's time
-    Uint32 getTicks();
+        //The various clock actions
+        void start();
+        void stop();
+        void pause();
+        void unpause();
 
-    //Checks the status of the timer
-    bool isStarted();
-    bool isPaused();
+        //Gets the timer's time
+        Uint32 getTicks();
 
-private:
-    //The clock tie when the timer started
-    Uint32 mStartTicks;
+        //Checks the status of the timer
+        bool isStarted();
+        bool isPaused();
 
-    //The ticks stored when the timer was paused
-    Uint32 mPausedTicks;
+    private:
+        //The clock tie when the timer started
+        Uint32 mStartTicks;
 
-    //The timer status
-    bool mPaused;
-    bool mStarted;
+        //The ticks stored when the timer was paused
+        Uint32 mPausedTicks;
+
+        //The timer status
+        bool mPaused;
+        bool mStarted;
+    };
 };
 #endif

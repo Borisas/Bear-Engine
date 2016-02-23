@@ -1,5 +1,5 @@
-#ifndef WIZARD_H
-#define WIZARD_H
+#ifndef BE_WIZARD_H
+#define BE_WIZARD_H
 
 
 #include "SDL2/SDL.h"
@@ -19,50 +19,54 @@
 
 using namespace std;
 
-class Wizard{
+namespace BearEngine{
 
-public:
-  static std::shared_ptr< Wizard > getInstance();
+    class Wizard{
 
-  Wizard();
-  string GameName = "BEngine";
+    public:
+        static std::shared_ptr< Wizard > getInstance();
 
-  bool InitGame();
-  void OnQuit();
+        Wizard();
+        string GameName = "BEngine";
 
-  void RunGame();
-  void SetFPS(int FPS);
+        bool InitGame();
+        void OnQuit();
 
-  Size GetWindowSize();
-  void SetWindowSize(Size _new);
+        void RunGame();
+        void SetFPS(int FPS);
 
-  bool GameLoop = true;
+        Size GetWindowSize();
+        void SetWindowSize(Size _new);
 
-  void SetActionOnEvent(Uint32 EventType, std::function<void ()> action);
+        bool GameLoop = true;
 
-  void ReplaceView(ViewPoint* next);
-  void PushView(ViewPoint* next);
-  void PopView();
+        void SetActionOnEvent(Uint32 EventType, std::function<void ()> action);
 
-  EventHandler* GetEventHandler();
+        void ReplaceView(ViewPoint* next);
+        void PushView(ViewPoint* next);
+        void PopView();
 
-  float getFPSMultiplier();
-  float getDelayTime();
-  float getDefaultDelayTime();
+        EventHandler* GetEventHandler();
 
-private:
-    stack<ViewPoint*> Viewer;
+        float getFPSMultiplier();
+        float getDelayTime();
+        float getDefaultDelayTime();
 
-    SDL_GLContext Context;
-    SDL_Window* GameWindow = NULL;
-    Size Window = {1024,768};
-    int FPS = 60;
-    int SCREEN_TICK_PER_FRAME = 1000 / FPS;
-    LTimer fpsTimer;
-    LTimer capTimer;
-    float dt = 0;
+    private:
 
-    EventHandler * ev = EventHandler::create();
-};
+        stack<ViewPoint*> Viewer;
 
+        SDL_GLContext Context;
+        SDL_Window* GameWindow = NULL;
+        Size Window = {1024,768};
+
+        int FPS = 60;
+        int SCREEN_TICK_PER_FRAME = 1000 / FPS;
+        LTimer fpsTimer;
+        LTimer capTimer;
+        float dt = 0;
+
+        EventHandler * ev = EventHandler::create();
+    };
+}
 #endif

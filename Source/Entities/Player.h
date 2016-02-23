@@ -5,7 +5,9 @@
 #include <iostream>
 using namespace std;
 
-class Player : public Sprite{
+USING_NS_BE;
+
+class Player : public BearEngine::Sprite{
 public:
     Player();
     ~Player();

@@ -5,6 +5,7 @@
 #include "Base/Wizard.h"
 #include "Base/Structures.h"
 #include "Base/EventHandler.h"
+#include "Base/Macros.h"
 
 #include "ObjVariables/ViewPoint.h"
 #include "ObjVariables/Sprite.h"

@@ -1,10 +1,10 @@
 #include "Sprite.h"
 
-Sprite::Sprite(){
+BearEngine::Sprite::Sprite(){
 }
-Sprite::~Sprite(){
+BearEngine::Sprite::~Sprite(){
 }
-bool Sprite::operator==(int t){
+bool BearEngine::Sprite::operator==(int t){
     if((t == 0 || t == NULL)){
         if(texture_loaded)
             return false;
@@ -12,7 +12,7 @@ bool Sprite::operator==(int t){
     }
     return false;
 }
-bool Sprite::operator!=(int t){
+bool BearEngine::Sprite::operator!=(int t){
     if(t == 0 || t == NULL){
         if(texture_loaded)
             return true;
@@ -20,7 +20,7 @@ bool Sprite::operator!=(int t){
     }
     return true;
 }
-void Sprite::draw(){
+void BearEngine::Sprite::draw(){
     if(texture_loaded){
         glColor3f(1,1,1);
         glBindTexture(GL_TEXTURE_2D, self_texture);
@@ -36,7 +36,7 @@ void Sprite::draw(){
         glEnd();
     }
 }
-bool Sprite::initWithFile(const char* file){
+bool BearEngine::Sprite::initWithFile(const char* file){
   SDL_Surface* image;
   image = IMG_Load(file);
   if(image){

@@ -8,6 +8,8 @@
 #include "engine/BEngineCore.h"
 #include "Game.h"
 
+USING_NS_BE;
+
 #define Wiz Wizard::getInstance()
 
 int main( int argc, char* args[] )

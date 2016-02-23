@@ -1,5 +1,5 @@
-#ifndef EVENTHANDLER_H
-#define EVENTHANDLER_H
+#ifndef BE_EVENTHANDLER_H
+#define BE_EVENTHANDLER_H
 
 
 #include "SDL2/SDL.h"
@@ -10,24 +10,26 @@
 typedef std::map< Uint32, std::function<void ()> > KMap;
 typedef KMap::iterator itKMap;
 
-class EventHandler{
-public:
-    static EventHandler* create();
-    void Update();
-    void ClearFunctions();
+namespace BearEngine{
+    class EventHandler{
+    public:
+        static EventHandler* create();
+        void Update();
+        void ClearFunctions();
 
-    std::function<void()> onQuit = [&](){};
-    
-    std::function<void()> onW = [&](){};
-    std::function<void()> onD = [&](){};
-    std::function<void()> onS = [&](){};
-    std::function<void()> onA = [&](){};
+        std::function<void()> onQuit = [&](){};
 
-    KMap KeyActionMap;
+        std::function<void()> onW = [&](){};
+        std::function<void()> onD = [&](){};
+        std::function<void()> onS = [&](){};
+        std::function<void()> onA = [&](){};
 
-private:
-    SDL_Event e;
-    const Uint8* keystates;// = SDL_GetKeyboardState( NULL );
-};
+        KMap KeyActionMap;
+
+    private:
+        SDL_Event e;
+        const Uint8* keystates;// = SDL_GetKeyboardState( NULL );
+    };
+}
 
 #endif

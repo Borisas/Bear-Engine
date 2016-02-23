@@ -8,11 +8,11 @@ OBJS_BASE = Source/engine/Base/Base.cpp \
 			Source/engine/Base/EventHandler.cpp \
 			Source/engine/Base/Wizard.cpp \
 			Source/engine/ObjVariables/Sprite.cpp \
-			Source/engine/Base/Timer.cpp
+			Source/engine/Base/Timer.cpp 
 #CC specifies which compiler we're using
 CC = g++
 #Game name
-NAME = first
+NAME = test
 #COMPILER_FLAGS specifies the additional compilation options we're using
 # -w suppresses all warnings
 COMPILER_FLAGS = -w -std=c++11
