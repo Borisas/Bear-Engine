@@ -1,0 +1,349 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		AD587F791C7B081200EA33AC /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../../.gitignore; sourceTree = "<group>"; };
+		AD587F7B1C7B081200EA33AC /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
+		AD587F7E1C7B081200EA33AC /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
+		AD587F7F1C7B081200EA33AC /* first */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = first; sourceTree = "<group>"; };
+		AD587F801C7B081200EA33AC /* make.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = make.bat; path = ../../make.bat; sourceTree = "<group>"; };
+		AD587F811C7B081200EA33AC /* make_osx.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = make_osx.mk; path = ../../make_osx.mk; sourceTree = "<group>"; };
+		AD587F821C7B081200EA33AC /* make_windows.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = make_windows.mk; path = ../../make_windows.mk; sourceTree = "<group>"; };
+		AD587F831C7B081200EA33AC /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = ../../Makefile; sourceTree = "<group>"; };
+		AD587F861C7B081200EA33AC /* BearEngine-osx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "BearEngine-osx.xcodeproj"; sourceTree = "<group>"; };
+		AD587F891C7B081200EA33AC /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Readme.md; path = ../../Readme.md; sourceTree = "<group>"; };
+		AD587F8A1C7B081200EA33AC /* run */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = run; path = ../../run; sourceTree = "<group>"; };
+		AD587F8E1C7B081200EA33AC /* Base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Base.cpp; sourceTree = "<group>"; };
+		AD587F8F1C7B081200EA33AC /* Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base.h; sourceTree = "<group>"; };
+		AD587F901C7B081200EA33AC /* EventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventHandler.cpp; sourceTree = "<group>"; };
+		AD587F911C7B081200EA33AC /* EventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHandler.h; sourceTree = "<group>"; };
+		AD587F921C7B081200EA33AC /* Structures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Structures.h; sourceTree = "<group>"; };
+		AD587F931C7B081200EA33AC /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
+		AD587F941C7B081200EA33AC /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		AD587F951C7B081200EA33AC /* Wizard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wizard.cpp; sourceTree = "<group>"; };
+		AD587F961C7B081200EA33AC /* Wizard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wizard.h; sourceTree = "<group>"; };
+		AD587F971C7B081200EA33AC /* BEngineCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEngineCore.h; sourceTree = "<group>"; };
+		AD587F991C7B081200EA33AC /* ObjBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjBase.h; sourceTree = "<group>"; };
+		AD587F9A1C7B081200EA33AC /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
+		AD587F9B1C7B081200EA33AC /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
+		AD587F9C1C7B081200EA33AC /* ViewPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPoint.h; sourceTree = "<group>"; };
+		AD587F9E1C7B081200EA33AC /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		AD587F9F1C7B081200EA33AC /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		AD587FA01C7B081200EA33AC /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		AD587FA11C7B081200EA33AC /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		AD587FA21C7B081200EA33AC /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		AD587F6C1C7B079E00EA33AC = {
+			isa = PBXGroup;
+			children = (
+				AD587F7A1C7B081200EA33AC /* Assets */,
+				AD587F8B1C7B081200EA33AC /* Source */,
+				AD587FA31C7B084500EA33AC /* Default */,
+			);
+			sourceTree = "<group>";
+		};
+		AD587F7A1C7B081200EA33AC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				AD587F7B1C7B081200EA33AC /* player.png */,
+			);
+			name = Assets;
+			path = ../../Assets;
+			sourceTree = "<group>";
+		};
+		AD587F7C1C7B081200EA33AC /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				AD587F7D1C7B081200EA33AC /* Assets */,
+				AD587F7F1C7B081200EA33AC /* first */,
+			);
+			name = bin;
+			path = ../../bin;
+			sourceTree = "<group>";
+		};
+		AD587F7D1C7B081200EA33AC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				AD587F7E1C7B081200EA33AC /* player.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		AD587F841C7B081200EA33AC /* project-osx */ = {
+			isa = PBXGroup;
+			children = (
+				AD587F851C7B081200EA33AC /* BearEngine-osx */,
+			);
+			name = "project-osx";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		AD587F851C7B081200EA33AC /* BearEngine-osx */ = {
+			isa = PBXGroup;
+			children = (
+				AD587F861C7B081200EA33AC /* BearEngine-osx.xcodeproj */,
+			);
+			path = "BearEngine-osx";
+			sourceTree = "<group>";
+		};
+		AD587F871C7B081200EA33AC /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD587F8B1C7B081200EA33AC /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				AD587F8C1C7B081200EA33AC /* engine */,
+				AD587F9D1C7B081200EA33AC /* Entities */,
+				AD587FA01C7B081200EA33AC /* Game.cpp */,
+				AD587FA11C7B081200EA33AC /* Game.h */,
+				AD587FA21C7B081200EA33AC /* main.cpp */,
+			);
+			name = Source;
+			path = ../../Source;
+			sourceTree = "<group>";
+		};
+		AD587F8C1C7B081200EA33AC /* engine */ = {
+			isa = PBXGroup;
+			children = (
+				AD587F8D1C7B081200EA33AC /* Base */,
+				AD587F971C7B081200EA33AC /* BEngineCore.h */,
+				AD587F981C7B081200EA33AC /* ObjVariables */,
+			);
+			path = engine;
+			sourceTree = "<group>";
+		};
+		AD587F8D1C7B081200EA33AC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AD587F8E1C7B081200EA33AC /* Base.cpp */,
+				AD587F8F1C7B081200EA33AC /* Base.h */,
+				AD587F901C7B081200EA33AC /* EventHandler.cpp */,
+				AD587F911C7B081200EA33AC /* EventHandler.h */,
+				AD587F921C7B081200EA33AC /* Structures.h */,
+				AD587F931C7B081200EA33AC /* Timer.cpp */,
+				AD587F941C7B081200EA33AC /* Timer.h */,
+				AD587F951C7B081200EA33AC /* Wizard.cpp */,
+				AD587F961C7B081200EA33AC /* Wizard.h */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		AD587F981C7B081200EA33AC /* ObjVariables */ = {
+			isa = PBXGroup;
+			children = (
+				AD587F991C7B081200EA33AC /* ObjBase.h */,
+				AD587F9A1C7B081200EA33AC /* Sprite.cpp */,
+				AD587F9B1C7B081200EA33AC /* Sprite.h */,
+				AD587F9C1C7B081200EA33AC /* ViewPoint.h */,
+			);
+			path = ObjVariables;
+			sourceTree = "<group>";
+		};
+		AD587F9D1C7B081200EA33AC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				AD587F9E1C7B081200EA33AC /* Player.cpp */,
+				AD587F9F1C7B081200EA33AC /* Player.h */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		AD587FA31C7B084500EA33AC /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				AD587F791C7B081200EA33AC /* .gitignore */,
+				AD587F7C1C7B081200EA33AC /* bin */,
+				AD587F801C7B081200EA33AC /* make.bat */,
+				AD587F811C7B081200EA33AC /* make_osx.mk */,
+				AD587F821C7B081200EA33AC /* make_windows.mk */,
+				AD587F831C7B081200EA33AC /* Makefile */,
+				AD587F841C7B081200EA33AC /* project-osx */,
+				AD587F891C7B081200EA33AC /* Readme.md */,
+				AD587F8A1C7B081200EA33AC /* run */,
+			);
+			name = Default;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		AD587F711C7B079E00EA33AC /* BearEngine-osx */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "-f make_osx.mk";
+			buildConfigurationList = AD587F741C7B079E00EA33AC /* Build configuration list for PBXLegacyTarget "BearEngine-osx" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Users/Bearis/Dev/BEngine;
+			dependencies = (
+			);
+			name = "BearEngine-osx";
+			passBuildSettingsInEnvironment = 0;
+			productName = "BearEngine-osx";
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		AD587F6D1C7B079E00EA33AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Mantas A";
+				TargetAttributes = {
+					AD587F711C7B079E00EA33AC = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = AD587F701C7B079E00EA33AC /* Build configuration list for PBXProject "BearEngine-osx" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AD587F6C1C7B079E00EA33AC;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AD587F871C7B081200EA33AC /* Products */;
+					ProjectRef = AD587F861C7B081200EA33AC /* BearEngine-osx.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				AD587F711C7B079E00EA33AC /* BearEngine-osx */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		AD587F721C7B079E00EA33AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		AD587F731C7B079E00EA33AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+			};
+			name = Release;
+		};
+		AD587F751C7B079E00EA33AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AD587F761C7B079E00EA33AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD587F701C7B079E00EA33AC /* Build configuration list for PBXProject "BearEngine-osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD587F721C7B079E00EA33AC /* Debug */,
+				AD587F731C7B079E00EA33AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD587F741C7B079E00EA33AC /* Build configuration list for PBXLegacyTarget "BearEngine-osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD587F751C7B079E00EA33AC /* Debug */,
+				AD587F761C7B079E00EA33AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD587F6D1C7B079E00EA33AC /* Project object */;
+}

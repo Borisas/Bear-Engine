@@ -2,6 +2,7 @@
 #include <SDL2/SDL_opengl.h>
 #include <vector>
 #include <iostream>
+#include <memory>
 #include <stdio.h>
 #include <stdlib.h>
 #include "engine/BEngineCore.h"

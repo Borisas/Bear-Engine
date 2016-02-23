@@ -3,7 +3,6 @@
 
 #include "engine/BEngineCore.h"
 #include "Entities/Player.h"
-// #include "Props/Room.h"
 #include <iostream>
 
 class Game : public ViewPoint{

@@ -28,7 +28,7 @@ public:
         offset.y = y;
     };
     virtual void draw(){};
-    virtual bool init(){};
+    virtual bool init(){return false;};
 protected:
     Square self;
     Pos offset = {0.5,0.5};
