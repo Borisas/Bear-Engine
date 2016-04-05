@@ -28,7 +28,6 @@
 		AD587F951C7B081200EA33AC /* Wizard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wizard.cpp; sourceTree = "<group>"; };
 		AD587F961C7B081200EA33AC /* Wizard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wizard.h; sourceTree = "<group>"; };
 		AD587F971C7B081200EA33AC /* BEngineCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEngineCore.h; sourceTree = "<group>"; };
-		AD587F991C7B081200EA33AC /* ObjBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjBase.h; sourceTree = "<group>"; };
 		AD587F9A1C7B081200EA33AC /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
 		AD587F9B1C7B081200EA33AC /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
 		AD587F9C1C7B081200EA33AC /* ViewPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPoint.h; sourceTree = "<group>"; };
@@ -37,6 +36,7 @@
 		AD587FA01C7B081200EA33AC /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		AD587FA11C7B081200EA33AC /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		AD587FA21C7B081200EA33AC /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		AD8897881CB3AC3F0018C713 /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -140,7 +140,7 @@
 		AD587F981C7B081200EA33AC /* ObjVariables */ = {
 			isa = PBXGroup;
 			children = (
-				AD587F991C7B081200EA33AC /* ObjBase.h */,
+				AD8897881CB3AC3F0018C713 /* Node.h */,
 				AD587F9A1C7B081200EA33AC /* Sprite.cpp */,
 				AD587F9B1C7B081200EA33AC /* Sprite.h */,
 				AD587F9C1C7B081200EA33AC /* ViewPoint.h */,
@@ -342,6 +342,7 @@
 				AD587F761C7B079E00EA33AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

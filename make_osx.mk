@@ -8,7 +8,8 @@ OBJS_BASE = Source/engine/Base/Base.cpp \
 			Source/engine/Base/EventHandler.cpp \
 			Source/engine/Base/Wizard.cpp \
 			Source/engine/ObjVariables/Sprite.cpp \
-			Source/engine/Base/Timer.cpp
+			Source/engine/Base/Timer.cpp \
+			Source/engine/ActionControl/ActionLocket.cpp 
 #CC specifies which compiler we're using
 CC = g++
 #Game name
