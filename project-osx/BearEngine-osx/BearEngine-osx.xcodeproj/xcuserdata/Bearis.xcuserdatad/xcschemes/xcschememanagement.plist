@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>BearEngine.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>AD587F711C7B079E00EA33AC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD88978C1CB3B1660018C713</key>
 		<dict>
 			<key>primary</key>
 			<true/>

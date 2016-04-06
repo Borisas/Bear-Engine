@@ -13,9 +13,11 @@ public:
     Game();
     ~Game();
 
-    void update();
+    void update() override;
 
-    void draw();
+    void draw() override;
+    
+    void onExit();
 
 private:
     Player objPlayer;

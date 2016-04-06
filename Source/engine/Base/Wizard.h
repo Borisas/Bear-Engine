@@ -13,6 +13,7 @@
 #include <memory>
 #include <string>
 #include <functional>
+#include <algorithm>
 #include <vector>
 #include <stack>
 
@@ -42,11 +43,9 @@ namespace BearEngine{
 
         void SetActionOnEvent(Uint32 EventType, std::function<void ()> action);
 
-        void ReplaceView(ViewPoint* next);
-        void PushView(ViewPoint* next);
+        void ReplaceView(ViewPoint * next);
+        void PushView(ViewPoint * next);
         void PopView();
-
-        EventHandler* GetEventHandler();
 
         float getFPSMultiplier();
         float getDelayTime();
@@ -66,7 +65,7 @@ namespace BearEngine{
         LTimer capTimer;
         float dt = 0;
 
-        EventHandler * ev = EventHandler::create();
+        EventHandler ev;
     };
 }
 #endif

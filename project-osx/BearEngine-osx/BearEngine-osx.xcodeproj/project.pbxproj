@@ -6,9 +6,37 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AD8897951CB3B1810018C713 /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD587F8E1C7B081200EA33AC /* Base.cpp */; };
+		AD8897961CB3B1840018C713 /* EventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD587F901C7B081200EA33AC /* EventHandler.cpp */; };
+		AD8897971CB3B1870018C713 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD587F931C7B081200EA33AC /* Timer.cpp */; };
+		AD8897981CB3B18B0018C713 /* Wizard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD587F951C7B081200EA33AC /* Wizard.cpp */; };
+		AD88979A1CB3B1950018C713 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD587F9A1C7B081200EA33AC /* Sprite.cpp */; };
+		AD88979B1CB3B19F0018C713 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD587F9E1C7B081200EA33AC /* Player.cpp */; };
+		AD88979C1CB3B19F0018C713 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD587FA01C7B081200EA33AC /* Game.cpp */; };
+		AD88979E1CB3B2E50018C713 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD88979D1CB3B2E50018C713 /* libSDL2-2.0.0.dylib */; };
+		AD8897A01CB3B3020018C713 /* libSDL2_image.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD88979F1CB3B3020018C713 /* libSDL2_image.dylib */; };
+		AD8897A21CB3B30E0018C713 /* libSDL2_ttf.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8897A11CB3B30E0018C713 /* libSDL2_ttf.dylib */; };
+		AD8897A41CB3B3140018C713 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8897A31CB3B3140018C713 /* OpenGL.framework */; };
+		AD8897A51CB3B32D0018C713 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD587FA21C7B081200EA33AC /* main.cpp */; };
+		AD8897A71CB3B4510018C713 /* Assets in CopyFiles */ = {isa = PBXBuildFile; fileRef = AD8897A61CB3B36B0018C713 /* Assets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AD88978B1CB3B1660018C713 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				AD8897A71CB3B4510018C713 /* Assets in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		AD587F791C7B081200EA33AC /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../../.gitignore; sourceTree = "<group>"; };
-		AD587F7B1C7B081200EA33AC /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		AD587F7E1C7B081200EA33AC /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		AD587F7F1C7B081200EA33AC /* first */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = first; sourceTree = "<group>"; };
 		AD587F801C7B081200EA33AC /* make.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = make.bat; path = ../../make.bat; sourceTree = "<group>"; };
@@ -37,25 +65,43 @@
 		AD587FA11C7B081200EA33AC /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		AD587FA21C7B081200EA33AC /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		AD8897881CB3AC3F0018C713 /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		AD88978D1CB3B1660018C713 /* BearEngine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BearEngine; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD8897901CB3B1660018C713 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		AD88979D1CB3B2E50018C713 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../../usr/local/Cellar/sdl2/2.0.4/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
+		AD88979F1CB3B3020018C713 /* libSDL2_image.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSDL2_image.dylib; path = ../../../../../../usr/local/Cellar/sdl2_image/2.0.1/lib/libSDL2_image.dylib; sourceTree = "<group>"; };
+		AD8897A11CB3B30E0018C713 /* libSDL2_ttf.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSDL2_ttf.dylib; path = ../../../../../../usr/local/Cellar/sdl2_ttf/2.0.13/lib/libSDL2_ttf.dylib; sourceTree = "<group>"; };
+		AD8897A31CB3B3140018C713 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		AD8897A61CB3B36B0018C713 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = ../../Assets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD88978A1CB3B1660018C713 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD8897A41CB3B3140018C713 /* OpenGL.framework in Frameworks */,
+				AD8897A01CB3B3020018C713 /* libSDL2_image.dylib in Frameworks */,
+				AD88979E1CB3B2E50018C713 /* libSDL2-2.0.0.dylib in Frameworks */,
+				AD8897A21CB3B30E0018C713 /* libSDL2_ttf.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		AD587F6C1C7B079E00EA33AC = {
 			isa = PBXGroup;
 			children = (
-				AD587F7A1C7B081200EA33AC /* Assets */,
+				AD8897A31CB3B3140018C713 /* OpenGL.framework */,
+				AD8897A11CB3B30E0018C713 /* libSDL2_ttf.dylib */,
+				AD88979F1CB3B3020018C713 /* libSDL2_image.dylib */,
+				AD88979D1CB3B2E50018C713 /* libSDL2-2.0.0.dylib */,
+				AD8897A61CB3B36B0018C713 /* Assets */,
 				AD587F8B1C7B081200EA33AC /* Source */,
 				AD587FA31C7B084500EA33AC /* Default */,
+				AD88978F1CB3B1660018C713 /* BearEngine */,
+				AD88978E1CB3B1660018C713 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		AD587F7A1C7B081200EA33AC /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				AD587F7B1C7B081200EA33AC /* player.png */,
-			);
-			name = Assets;
-			path = ../../Assets;
 			sourceTree = "<group>";
 		};
 		AD587F7C1C7B081200EA33AC /* bin */ = {
@@ -173,6 +219,22 @@
 			name = Default;
 			sourceTree = "<group>";
 		};
+		AD88978E1CB3B1660018C713 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD88978D1CB3B1660018C713 /* BearEngine */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD88978F1CB3B1660018C713 /* BearEngine */ = {
+			isa = PBXGroup;
+			children = (
+				AD8897901CB3B1660018C713 /* main.cpp */,
+			);
+			path = BearEngine;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXLegacyTarget section */
@@ -192,6 +254,26 @@
 		};
 /* End PBXLegacyTarget section */
 
+/* Begin PBXNativeTarget section */
+		AD88978C1CB3B1660018C713 /* BearEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD8897921CB3B1660018C713 /* Build configuration list for PBXNativeTarget "BearEngine" */;
+			buildPhases = (
+				AD8897891CB3B1660018C713 /* Sources */,
+				AD88978A1CB3B1660018C713 /* Frameworks */,
+				AD88978B1CB3B1660018C713 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BearEngine;
+			productName = BearEngine;
+			productReference = AD88978D1CB3B1660018C713 /* BearEngine */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
 /* Begin PBXProject section */
 		AD587F6D1C7B079E00EA33AC /* Project object */ = {
 			isa = PBXProject;
@@ -201,6 +283,9 @@
 				TargetAttributes = {
 					AD587F711C7B079E00EA33AC = {
 						CreatedOnToolsVersion = 7.1.1;
+					};
+					AD88978C1CB3B1660018C713 = {
+						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
 			};
@@ -212,6 +297,7 @@
 				en,
 			);
 			mainGroup = AD587F6C1C7B079E00EA33AC;
+			productRefGroup = AD88978E1CB3B1660018C713 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
@@ -222,9 +308,28 @@
 			projectRoot = "";
 			targets = (
 				AD587F711C7B079E00EA33AC /* BearEngine-osx */,
+				AD88978C1CB3B1660018C713 /* BearEngine */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD8897891CB3B1660018C713 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD8897A51CB3B32D0018C713 /* main.cpp in Sources */,
+				AD88979B1CB3B19F0018C713 /* Player.cpp in Sources */,
+				AD88979C1CB3B19F0018C713 /* Game.cpp in Sources */,
+				AD8897951CB3B1810018C713 /* Base.cpp in Sources */,
+				AD8897961CB3B1840018C713 /* EventHandler.cpp in Sources */,
+				AD8897971CB3B1870018C713 /* Timer.cpp in Sources */,
+				AD8897981CB3B18B0018C713 /* Wizard.cpp in Sources */,
+				AD88979A1CB3B1950018C713 /* Sprite.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
 		AD587F721C7B079E00EA33AC /* Debug */ = {
@@ -323,6 +428,50 @@
 			};
 			name = Release;
 		};
+		AD8897931CB3B1660018C713 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				DEPLOYMENT_LOCATION = NO;
+				HEADER_SEARCH_PATHS = (
+					"/usr/local/Cellar/sdl2/2.0.4/include\n/usr/local/Cellar/sdl2/2.0.4/include\n",
+					/usr/local/Cellar/sdl2_ttf/2.0.13/include,
+					/usr/local/Cellar/sdl2_image/2.0.1/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/sdl2/2.0.4/lib,
+					/usr/local/Cellar/sdl2_image/2.0.1/lib,
+					/usr/local/Cellar/sdl2_ttf/2.0.13/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AD8897941CB3B1660018C713 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				DEPLOYMENT_LOCATION = NO;
+				HEADER_SEARCH_PATHS = (
+					"/usr/local/Cellar/sdl2/2.0.4/include\n/usr/local/Cellar/sdl2/2.0.4/include\n",
+					/usr/local/Cellar/sdl2_ttf/2.0.13/include,
+					/usr/local/Cellar/sdl2_image/2.0.1/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/sdl2/2.0.4/lib,
+					/usr/local/Cellar/sdl2_image/2.0.1/lib,
+					/usr/local/Cellar/sdl2_ttf/2.0.13/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -343,6 +492,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		AD8897921CB3B1660018C713 /* Build configuration list for PBXNativeTarget "BearEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD8897931CB3B1660018C713 /* Debug */,
+				AD8897941CB3B1660018C713 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

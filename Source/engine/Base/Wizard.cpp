@@ -47,7 +47,7 @@ bool BearEngine::Wizard::InitGame(){
     //BASE EVENTS:
 
 
-    this->ev->onQuit = [&](){
+    this->ev.onQuit = [&](){
         this->GameLoop = false;
     };
 
@@ -56,11 +56,14 @@ bool BearEngine::Wizard::InitGame(){
     return true;
 }
 void BearEngine::Wizard::OnQuit(){
+    for(int i = 0; i < Viewer.size(); i++){
+        delete Viewer.top();
+        Viewer.pop();
+    }
     glDisable(GL_BLEND);
     SDL_DestroyWindow(GameWindow);
     SDL_Quit();
     IMG_Quit();
-    //printf("Quit");
     cout << "Quit" << endl;
 }
 void BearEngine::Wizard::RunGame(){
@@ -71,7 +74,11 @@ void BearEngine::Wizard::RunGame(){
         glClearColor(0,0,0,1);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        ev->Update();
+        ev.update();
+        if(Viewer.size() > 0){
+            Viewer.top()->handleEvents();
+        }
+        
 
         float avgFPS = countedFrames / ( fpsTimer.getTicks() / 1000.f );
         if( avgFPS > 2000000 ){
@@ -81,7 +88,6 @@ void BearEngine::Wizard::RunGame(){
             Viewer.top()->update();
             Viewer.top()->draw();
         }
-        // cout << "Update: " << avgFPS << endl;
         ++countedFrames;
         int frameTicks = capTimer.getTicks();
         this->dt = 1/avgFPS;
@@ -109,12 +115,6 @@ BearEngine::Size BearEngine::Wizard::GetWindowSize(){
 }
 void BearEngine::Wizard::SetWindowSize(Size _new){
     Window = _new;
-}
-void BearEngine::Wizard::SetActionOnEvent(Uint32 EventType, std::function<void ()> action){
-    ev->KeyActionMap[EventType] = action;
-}
-BearEngine::EventHandler* BearEngine::Wizard::GetEventHandler(){
-    return ev;
 }
 void BearEngine::Wizard::ReplaceView(ViewPoint * next){
     if(Viewer.size() > 0)

@@ -22,8 +22,13 @@ int main( int argc, char* args[] )
         Wizard::getInstance()->OnQuit();
         return 0;
     }
-    Wizard::getInstance()->ReplaceView(new Game);
+    
+    Game * startpoint = new Game;
+    
+    Wizard::getInstance()->ReplaceView(startpoint);
 
+    cout << "umm i should has view" << endl;
+    
     Wizard::getInstance()->RunGame();
     Wizard::getInstance()->OnQuit();
 

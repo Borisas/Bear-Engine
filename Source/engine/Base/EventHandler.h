@@ -14,17 +14,14 @@ namespace BearEngine{
     class EventHandler{
     public:
         static EventHandler* create();
-        void Update();
-        void ClearFunctions();
+        void update();
+        void clearFunctions();
 
         std::function<void()> onQuit = [&](){};
 
-        std::function<void()> onW = [&](){};
-        std::function<void()> onD = [&](){};
-        std::function<void()> onS = [&](){};
-        std::function<void()> onA = [&](){};
-
         KMap KeyActionMap;
+        
+        void addEvent(Uint32 event, std::function<void()> action);
 
     private:
         SDL_Event e;
