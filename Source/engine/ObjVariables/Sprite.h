@@ -2,7 +2,7 @@
 #define BE_SPRITE_H
 
 #include "SDL2/SDL.h"
-#include "SDL2/SDL_image.h"
+#include "SDL_image.h"
 #include "SDL2/SDL_opengl.h"
 #include "../Base/Base.h"
 #include "../Base/Structures.h"

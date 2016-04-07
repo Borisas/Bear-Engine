@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD634BB81CB671A8004C33B4 /* libSDL2_image-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD634BB71CB671A8004C33B4 /* libSDL2_image-2.0.0.dylib */; };
-		AD634BBA1CB671B2004C33B4 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD634BB91CB671B2004C33B4 /* libSDL2-2.0.0.dylib */; };
-		AD634BBC1CB671BA004C33B4 /* libSDL2_ttf-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD634BBB1CB671BA004C33B4 /* libSDL2_ttf-2.0.0.dylib */; };
+		AD634BBE1CB673DF004C33B4 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD634BBD1CB673DF004C33B4 /* SDL2_ttf.framework */; };
+		AD634BC01CB673E7004C33B4 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD634BBF1CB673E7004C33B4 /* SDL2_image.framework */; };
+		AD634BC21CB673EE004C33B4 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD634BC11CB673EE004C33B4 /* SDL2.framework */; };
+		AD634BCE1CB67725004C33B4 /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AD634BC11CB673EE004C33B4 /* SDL2.framework */; };
+		AD634BCF1CB67725004C33B4 /* SDL2_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AD634BBF1CB673E7004C33B4 /* SDL2_image.framework */; };
+		AD634BD01CB67725004C33B4 /* SDL2_ttf.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AD634BBD1CB673DF004C33B4 /* SDL2_ttf.framework */; };
 		AD8897951CB3B1810018C713 /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD587F8E1C7B081200EA33AC /* Base.cpp */; };
 		AD8897961CB3B1840018C713 /* EventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD587F901C7B081200EA33AC /* EventHandler.cpp */; };
 		AD8897971CB3B1870018C713 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD587F931C7B081200EA33AC /* Timer.cpp */; };
@@ -30,6 +33,9 @@
 			dstSubfolderSpec = 16;
 			files = (
 				AD8897A71CB3B4510018C713 /* Assets in CopyFiles */,
+				AD634BCE1CB67725004C33B4 /* SDL2.framework in CopyFiles */,
+				AD634BCF1CB67725004C33B4 /* SDL2_image.framework in CopyFiles */,
+				AD634BD01CB67725004C33B4 /* SDL2_ttf.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,12 +70,11 @@
 		AD587FA01C7B081200EA33AC /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		AD587FA11C7B081200EA33AC /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		AD587FA21C7B081200EA33AC /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		AD634BB71CB671A8004C33B4 /* libSDL2_image-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2_image-2.0.0.dylib"; path = "../../ext_libraries/osx/sdl2_image/2.0.1/lib/libSDL2_image-2.0.0.dylib"; sourceTree = "<group>"; };
-		AD634BB91CB671B2004C33B4 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../ext_libraries/osx/sdl2/2.0.4/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
-		AD634BBB1CB671BA004C33B4 /* libSDL2_ttf-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2_ttf-2.0.0.dylib"; path = "../../ext_libraries/osx/sdl2_ttf/2.0.13/lib/libSDL2_ttf-2.0.0.dylib"; sourceTree = "<group>"; };
+		AD634BBD1CB673DF004C33B4 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../ext_libraries/osx/sdl2_ttf/2.0.13/framework/SDL2_ttf.framework; sourceTree = "<group>"; };
+		AD634BBF1CB673E7004C33B4 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../ext_libraries/osx/sdl2_image/2.0.1/framework/SDL2_image.framework; sourceTree = "<group>"; };
+		AD634BC11CB673EE004C33B4 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../ext_libraries/osx/sdl2/2.0.4/framework/SDL2.framework; sourceTree = "<group>"; };
 		AD8897881CB3AC3F0018C713 /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		AD88978D1CB3B1660018C713 /* BearEngine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BearEngine; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD8897901CB3B1660018C713 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		AD8897A31CB3B3140018C713 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		AD8897A61CB3B36B0018C713 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = ../../Assets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,9 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD634BBA1CB671B2004C33B4 /* libSDL2-2.0.0.dylib in Frameworks */,
-				AD634BB81CB671A8004C33B4 /* libSDL2_image-2.0.0.dylib in Frameworks */,
-				AD634BBC1CB671BA004C33B4 /* libSDL2_ttf-2.0.0.dylib in Frameworks */,
+				AD634BC21CB673EE004C33B4 /* SDL2.framework in Frameworks */,
+				AD634BC01CB673E7004C33B4 /* SDL2_image.framework in Frameworks */,
+				AD634BBE1CB673DF004C33B4 /* SDL2_ttf.framework in Frameworks */,
 				AD8897A41CB3B3140018C713 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,14 +97,10 @@
 		AD587F6C1C7B079E00EA33AC = {
 			isa = PBXGroup;
 			children = (
-				AD634BB91CB671B2004C33B4 /* libSDL2-2.0.0.dylib */,
-				AD634BBB1CB671BA004C33B4 /* libSDL2_ttf-2.0.0.dylib */,
-				AD634BB71CB671A8004C33B4 /* libSDL2_image-2.0.0.dylib */,
-				AD8897A31CB3B3140018C713 /* OpenGL.framework */,
+				AD634BC31CB6748E004C33B4 /* Frameworks */,
 				AD8897A61CB3B36B0018C713 /* Assets */,
 				AD587F8B1C7B081200EA33AC /* Source */,
 				AD587FA31C7B084500EA33AC /* Default */,
-				AD88978F1CB3B1660018C713 /* BearEngine */,
 				AD88978E1CB3B1660018C713 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -219,20 +220,23 @@
 			name = Default;
 			sourceTree = "<group>";
 		};
+		AD634BC31CB6748E004C33B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD634BC11CB673EE004C33B4 /* SDL2.framework */,
+				AD634BBF1CB673E7004C33B4 /* SDL2_image.framework */,
+				AD634BBD1CB673DF004C33B4 /* SDL2_ttf.framework */,
+				AD8897A31CB3B3140018C713 /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AD88978E1CB3B1660018C713 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				AD88978D1CB3B1660018C713 /* BearEngine */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		AD88978F1CB3B1660018C713 /* BearEngine */ = {
-			isa = PBXGroup;
-			children = (
-				AD8897901CB3B1660018C713 /* main.cpp */,
-			);
-			path = BearEngine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,18 +435,25 @@
 		AD8897931CB3B1660018C713 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLY_RULES_IN_COPY_FILES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				DEPLOYMENT_LOCATION = NO;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2/2.0.4/framework\"",
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_image/2.0.1/framework\"",
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_ttf/2.0.13/framework\"",
+				);
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2/2.0.4/include\"",
-					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_image/2.0.1/include\"",
-					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_ttf/2.0.13/include\"",
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2/2.0.4/framework/SDL2.framework/Headers\"",
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_ttf/2.0.13/framework/SDL2_ttf.framework/Headers\"",
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_image/2.0.1/framework/SDL2_image.framework/Headers\"",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_ttf/2.0.13/lib\"",
-					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_image/2.0.1/lib\"",
 					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2/2.0.4/lib\"",
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_image/2.0.1/lib\"",
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_ttf/2.0.13/lib\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -453,18 +464,25 @@
 		AD8897941CB3B1660018C713 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLY_RULES_IN_COPY_FILES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				DEPLOYMENT_LOCATION = NO;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2/2.0.4/framework\"",
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_image/2.0.1/framework\"",
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_ttf/2.0.13/framework\"",
+				);
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2/2.0.4/include\"",
-					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_image/2.0.1/include\"",
-					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_ttf/2.0.13/include\"",
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2/2.0.4/framework/SDL2.framework/Headers\"",
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_ttf/2.0.13/framework/SDL2_ttf.framework/Headers\"",
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_image/2.0.1/framework/SDL2_image.framework/Headers\"",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_ttf/2.0.13/lib\"",
-					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_image/2.0.1/lib\"",
 					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2/2.0.4/lib\"",
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_image/2.0.1/lib\"",
+					"\"$(SRCROOT)/../../ext_libraries/osx/sdl2_ttf/2.0.13/lib\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
