@@ -12,6 +12,7 @@ bool BearEngine::Sprite::operator==(int t){
     }
     return false;
 }
+
 bool BearEngine::Sprite::operator!=(int t){
     if(t == 0 || t == NULL){
         if(texture_loaded)

@@ -4,13 +4,18 @@
 
 #include "SDL2/SDL.h"
 #include <functional>
+#include "Structures.h"
 #include <iostream>
 #include <map>
 
 typedef std::map< Uint32, std::function<void ()> > KMap;
 typedef KMap::iterator itKMap;
 
+
 namespace BearEngine{
+    
+    
+    
     class EventHandler{
     public:
         static EventHandler* create();
