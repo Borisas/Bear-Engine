@@ -2,6 +2,14 @@
 
 using namespace BearEngine;
 
+
+std::shared_ptr<BearEngine::Layer> Layer::create(){
+    return std::make_shared<Layer>(Layer());
+}
+std::shared_ptr<BearEngine::Layer> Layer::create(BearEngine::Size container_size){
+    return std::make_shared<Layer>(Layer(container_size));
+}
+
 Layer::Layer(){}
 
 Layer::Layer(Size contsz){

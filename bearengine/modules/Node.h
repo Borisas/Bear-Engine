@@ -4,11 +4,13 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <memory>
 
 #include "SDL.h"
 
 #include "../core/Structures.h"
 #include "../core/EventHandlers.h"
+#include "../core/Macros.h"
 
 namespace BearEngine {
 
@@ -17,15 +19,21 @@ namespace BearEngine {
     class Node {
     public:
 
-        Node();
-        ~Node();
+
+        static std::shared_ptr<BearEngine::Node> create();
+
+        virtual ~Node();
 
         virtual bool init() {};
         virtual void draw(BearEngine::NodeTransform) {};
         virtual void update(float dt) {};
 
-        void addChild(BearEngine::Node*, int z = 0);
-        void removeChild(BearEngine::Node*);
+        void addChild(std::shared_ptr<BearEngine::Node>, int z = 0);
+        void removeChild(std::shared_ptr<BearEngine::Node>);
+        void removeFromParent();
+
+        void addEventHandler(std::shared_ptr<BearEngine::EventHandler>);
+        void removeEventHandler(BearEngine::EventHandler*);
 
         void setPosition    (BearEngine::Point2);
         void setScale       (BearEngine::Vector2);
@@ -43,9 +51,14 @@ namespace BearEngine {
         BearEngine::Rectangle                   getBoundingBox();
         BearEngine::NodeTransform               getNodeTransform();
         int                                     getZIndex();
-        const std::vector<BearEngine::Node*>&   getChildren();
+        const std::vector<std::shared_ptr<BearEngine::Node> >&   getChildren();
+
+    protected:
+        Node();
 
     private:
+
+
 
         int                 _local_z_index  = 0;
         BearEngine::Point2  _position       = BearEngine::Point2(0.f,0.f);
@@ -55,17 +68,11 @@ namespace BearEngine {
         BearEngine::Color4f _color          = BearEngine::Color4f(1.f,1.f,1.f,1.f);
 
         //TODO: Smart updated bounding boxes.
-//    BearEngine::Rectangle _bounding_box;
-//    bool _bounding_box_fresh = false;
-        //---
-
-        bool _mouse_events      = false;
-        bool _keyboard_events   = false;
-
-        EventHandler* _ev_handler = nullptr;
 
 
-        std::vector<BearEngine::Node*> _children;
+        std::vector<std::shared_ptr<BearEngine::EventHandler> > _ev_handlers;
+
+        std::vector<std::shared_ptr<BearEngine::Node> > _children;
 
         BearEngine::Node* _parent;
 

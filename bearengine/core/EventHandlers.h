@@ -3,37 +3,60 @@
 
 #include <vector>
 #include <functional>
+#include <map>
+#include <memory>
 
 #include "SDL.h"
+
+#include "Macros.h"
 
 namespace BearEngine {
 
     class EventHandler {
     public:
         virtual void handleEvents(std::vector<SDL_Event>&) = 0;
+
+        int test_var = -1;
     };
 
     class MouseEventHandler : public BearEngine::EventHandler{
 
     public:
 
+        CREATE_FUNC(BearEngine::MouseEventHandler);
+
+        MouseEventHandler(){};
+        virtual ~MouseEventHandler(){};
+
         void handleEvents(std::vector<SDL_Event>&) override;
 
-    private:
+        void setOnMouseClick(std::function<void(const SDL_Event & e)>);
+        void setOnMouseRelease(std::function<void(const SDL_Event & e)>);
+        void setOnMouseMove(std::function<void(const SDL_Event & e)>);
 
-        std::function<void(SDL_Event e)> _on_mouse_click    = [](SDL_Event e){};
-        std::function<void(SDL_Event e)> _on_mouse_release  = [](SDL_Event e){};
-        std::function<void(SDL_Event e)> _on_mouse_move     = [](SDL_Event e){};
+    protected:
+
+        std::function<void(const SDL_Event & e)> _on_mouse_click    = [](const SDL_Event & e){};
+        std::function<void(const SDL_Event & e)> _on_mouse_release  = [](const SDL_Event & e){};
+        std::function<void(const SDL_Event & e)> _on_mouse_move     = [](const SDL_Event & e){};
     };
 
     class KeyboardEventHandler : public BearEngine::EventHandler{
 
     public:
 
+        CREATE_FUNC(BearEngine::KeyboardEventHandler);
+
+        KeyboardEventHandler(){};
+        virtual ~KeyboardEventHandler(){};
+
         void handleEvents(std::vector<SDL_Event>&) override;
 
-    private:
+        void setKeyEvent(Uint32, std::function< void() >);
+        void unsetKeyEvent(Uint32);
 
+    private:
+        std::map< Uint32, std::function< void() > > _key_map;
     };
 
 }

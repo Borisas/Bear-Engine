@@ -3,22 +3,53 @@
 using namespace BearEngine;
 using std::cout;
 
-Node::Node() {}
-Node::~Node() {
-    cout << "NODE DELETE CALLED" << '\n';
+std::shared_ptr<BearEngine::Node> Node::create(){
+    return std::make_shared<Node>( Node() );
 }
 
-void Node::addChild(BearEngine::Node * ch, int z) {
+Node::Node() {}
+Node::~Node() {
+    cout << "NODE DELETE CALLED(" << this << ")" << '\n';
+}
+
+void Node::addChild(std::shared_ptr<BearEngine::Node> ch, int z) {
     ch->setZIndex(z);
     ch->_parent = this;
     _children.push_back(ch);
 
-    std::sort(_children.begin(), _children.end(), [](BearEngine::Node* a, BearEngine::Node* b){
+    std::sort(_children.begin(), _children.end(), [](std::shared_ptr<Node> a, std::shared_ptr<Node> b){
         return a->getZIndex() < b->getZIndex();
     });
 }
-void Node::removeChild(BearEngine::Node *) {
-    //TODO: WRITE CODE
+
+void Node::removeChild(std::shared_ptr<BearEngine::Node> ch) {
+
+//    for(unsigned int i = 0; i < _children.size(); i++){
+//
+//        if(_children[i] == ch){
+//            _children[i]->_parent = nullptr;
+//            _children.erase(_children.begin()+i);
+//        }
+//
+//    }
+}
+
+void Node::removeFromParent() {
+//    _parent->removeChild(this);
+}
+
+void Node::addEventHandler(std::shared_ptr<BearEngine::EventHandler> evhandler) {
+
+    _ev_handlers.push_back(evhandler);
+}
+
+void Node::removeEventHandler(BearEngine::EventHandler * evhandler) {
+
+//    for(unsigned int i = 0; i < _ev_handlers.size(); i++){
+//        if(_ev_handlers[i] == evhandler){
+//            _ev_handlers.erase(_ev_handlers.begin()+i);
+//        }
+//    }
 }
 
 void Node::setPosition(Point2 p) {
@@ -91,7 +122,7 @@ NodeTransform Node::getNodeTransform() {
 int Node::getZIndex() {
     return _local_z_index;
 }
-const std::vector<BearEngine::Node*>& Node::getChildren(){
+const std::vector<std::shared_ptr<BearEngine::Node> >& Node::getChildren(){
     return _children;
 }
 
@@ -136,23 +167,23 @@ void Node::_loop_tree(float dt, std::vector<SDL_Event> & events) {
     /*
      * ORDER OF ACTIONS:
      *  1: update node
-     *  2: get and sort children by zIndex
-     *  3: loop_tree children
-     *  4: draw node
+     *  2: draw node
+     *  3: get and sort children by zIndex
+     *  4: loop_tree children
+     *
      */
 
 
     BearEngine::NodeTransform my_transform = getNodeTransform();
 
-    if(_mouse_events){
-        // CATCH MOUSE EVENT
-    }
-    if(_keyboard_events){
-        //CATCH KEYBOARD EVENT
+    if(_ev_handlers.size() > 0){
+        for(auto eh : _ev_handlers){
+            std::cout << eh << ":" << eh->test_var << '\n';
+            eh->handleEvents(events);
+        }
     }
 
     update(dt);
-
     draw( my_transform );
 
     for(auto child : _children){
@@ -164,11 +195,11 @@ void Node::_loop_tree(float dt, std::vector<SDL_Event> & events, BearEngine::Nod
 
     BearEngine::NodeTransform my_transform = _generate_transform(parentTransform);
 
-    if(_mouse_events){
-        // CATCH MOUSE EVENT
-    }
-    if(_keyboard_events){
-        //CATCH KEYBOARD EVENT
+    if(_ev_handlers.size() > 0){
+        for(auto eh : _ev_handlers){
+            std::cout << eh << ":" << eh->test_var << '\n';
+            eh->handleEvents(events);
+        }
     }
 
     update(dt);

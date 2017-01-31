@@ -3,23 +3,19 @@
 using namespace BearEngine;
 using std::string;
 
+std::shared_ptr<BearEngine::Sprite> Sprite::create(){
+    return std::make_shared<Sprite>(Sprite());
+}
+std::shared_ptr<BearEngine::Sprite> Sprite::create(std::string file){
+    return std::make_shared<Sprite>(Sprite(file));
+}
+
 Sprite::Sprite(){};
 Sprite::Sprite(std::string file){
     initWithFile(file);
 }
 
 Sprite::~Sprite(){};
-
-void Sprite::test_draw() {
-    auto bb = getBoundingBox();
-
-    _text.draw(
-            bb.x,
-            bb.y,
-            bb.x + bb.width,
-            bb.y + bb.height
-    );
-}
 
 void Sprite::draw(BearEngine::NodeTransform transform){
 

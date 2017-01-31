@@ -13,26 +13,39 @@ int main(int argc, char** argv) {
 
 
 
-    BE::Layer test_layer = BE::Layer(BE::Size(500,500));
-    test_layer.setAnchorPoint({0.5f,0.5f});
-    test_layer.setPosition({BE::Organizer::getInstance().getWindowSize().width/2,
+    auto test_layer = BE::Layer::create(BE::Size(500,500));
+    test_layer->setAnchorPoint({0.5f,0.5f});
+    test_layer->setPosition({BE::Organizer::getInstance().getWindowSize().width/2,
                            BE::Organizer::getInstance().getWindowSize().height/2});
 
-    test_layer.setColor({0.9f,0.9f,0.9f,1.f});
+    test_layer->setColor({0.9f,0.9f,0.9f,1.f});
 
+    auto ev = BE::MouseEventHandler::create();
+    ev->setOnMouseClick([&](const SDL_Event & e){
+        std::cout << "MOUSE CLICK" << '\n';
+    });
+    test_layer->addEventHandler(ev);
 
-    BE::Sprite player = BE::Sprite("res/img.png");
-    player.setAnchorPoint({0.f,0.f});
-    test_layer.addChild(&player);
+    auto button = BE::Button::create("res/inner/img_sec.png");
+    button->setOnClick([](){
+       std::cout << "LOL\n";
+    });
 
-    BE::Scene top = BE::Scene();
+    test_layer->addChild(button);
 
-    top.addChild(&test_layer);
+    auto player = BE::Sprite::create("res/img.png");
+    player->setAnchorPoint({0.5f,0.5f});
+    player->setPosition({
+            test_layer->getContentSize().width/2,
+            test_layer->getContentSize().height/2
+                       });
+    test_layer->addChild(player);
 
+    auto top = BE::Scene::create();
+    top->addChild(test_layer);
     BE::Organizer::getInstance().pushScene(top);
 
 
     BE::Organizer::getInstance().runGame();
-
     return 0;
 }

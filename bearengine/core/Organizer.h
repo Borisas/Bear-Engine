@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <stack>
+#include <memory>
 
 #include "SDL.h"
 #include "SDL_opengl.h"
@@ -38,7 +39,7 @@ namespace BearEngine {
 
         void runGame();
 
-        void pushScene(BearEngine::Scene);
+        void pushScene(std::shared_ptr<Scene>);
 
         BearEngine::Size getWindowSize();
 
@@ -62,7 +63,7 @@ namespace BearEngine {
 
         BearEngine::Size _winsize = {1024, 768};
 
-        std::stack<BearEngine::Scene> _scenes;
+        std::stack< std::shared_ptr<BearEngine::Scene> > _scenes;
 
     };
 };

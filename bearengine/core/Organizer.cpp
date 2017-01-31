@@ -49,8 +49,8 @@ bool Organizer::initGame() {
 }
 
 void Organizer::destroyGame() {
-    while(_scenes.size() > 0)
-        _scenes.pop();
+//    while(_scenes.size() > 0)
+//        _scenes.pop();
     glDisable(GL_BLEND);
     SDL_DestroyWindow(_window);
     SDL_Quit();
@@ -76,13 +76,13 @@ void Organizer::runGame() {
         glClear(GL_COLOR_BUFFER_BIT);
 
         if(_scenes.size() > 0)
-            _scenes.top().loopTree(0.0167f, events);
+            _scenes.top()->loopTree(0.0167f, events);
 
         SDL_GL_SwapWindow(_window);
     }
 }
 
-void Organizer::pushScene(Scene n){
+void Organizer::pushScene(std::shared_ptr<Scene> n){
     _scenes.push(n);
 }
 

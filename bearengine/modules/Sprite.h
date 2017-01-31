@@ -3,20 +3,22 @@
 
 #include <string>
 
-#include "bearengine.h"
+#include "../core/Structures.h"
+#include "Node.h"
+#include "Texture.h"
+#include "../core/Macros.h"
 
 namespace BearEngine {
 
     class Sprite : public BearEngine::Node {
 
     public:
-        Sprite();
-        Sprite(std::string file);
-        ~Sprite();
 
-        //TODO: REMOVE
-        void test_draw();
-        //---
+        static std::shared_ptr<BearEngine::Sprite> create();
+        static std::shared_ptr<BearEngine::Sprite> create(std::string file);
+
+        virtual ~Sprite();
+
 
         virtual void draw(BearEngine::NodeTransform) override;
         virtual void update(float dt) override;
@@ -26,6 +28,9 @@ namespace BearEngine {
         BearEngine::Texture _text;
 
     protected:
+
+        Sprite();
+        Sprite(std::string file);
 
         bool initWithFile(std::string file);
 

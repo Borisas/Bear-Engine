@@ -3,6 +3,7 @@
 
 #include "Node.h"
 #include "../core/Structures.h"
+#include "../core/Macros.h"
 
 namespace BearEngine {
 
@@ -10,15 +11,18 @@ namespace BearEngine {
 
     public:
 
-        Layer();
-        Layer(BearEngine::Size);
+        static std::shared_ptr<BearEngine::Layer> create();
+        static std::shared_ptr<BearEngine::Layer> create(BearEngine::Size);
 
-        ~Layer();
+
+        virtual ~Layer();
 
         void draw(BearEngine::NodeTransform) override;
 
-    private:
+    protected:
 
+        Layer();
+        Layer(BearEngine::Size);
 
     };
 };

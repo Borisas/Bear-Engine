@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "Node.h"
+#include "../core/Macros.h"
 #include "SDL.h"
 
 namespace BearEngine {
@@ -12,18 +13,21 @@ namespace BearEngine {
 
     public:
 
-        Scene();
+        static std::shared_ptr<BearEngine::Scene> create();
 
-        ~Scene();
+        virtual ~Scene();
 
         void loopTree(float dt, std::vector<SDL_Event> & events);
 
-        void addChild(BearEngine::Node*);
+        void addChild(std::shared_ptr<BearEngine::Node>);
 
+
+    protected:
+        Scene();
 
     private:
 
-        BearEngine::Node* _child;
+        std::shared_ptr<BearEngine::Node> _child;
     };
 
 };
