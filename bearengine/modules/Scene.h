@@ -13,9 +13,11 @@ namespace BearEngine {
 
     public:
 
+        virtual ~Scene();
+
         static std::shared_ptr<BearEngine::Scene> create();
 
-        virtual ~Scene();
+        virtual bool init();
 
         void loopTree(float dt, std::vector<SDL_Event> & events);
 

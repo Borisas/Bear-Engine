@@ -7,18 +7,24 @@ std::shared_ptr<BearEngine::Button> Button::create(){
     return std::make_shared<Button>(Button());
 }
 std::shared_ptr<BearEngine::Button> Button::create(std::string file){
-//    return std::make_shared<Button>( Button(file) );
     auto ptr = std::make_shared<Button>( Button() );
-    ptr->init(file);
+    ptr->initWithFile(file);
     return ptr;
 }
 
 Button::Button(){}
 
-bool Button::init(std::string file){
-    initWithFile(file);
+bool Button::init(){
+    if(!Sprite::init())
+        return false;
 
-    test = 4;
+    return true;
+}
+
+bool Button::initWithFile(std::string file){
+
+    if(!Sprite::initWithFile(file))
+        return false;
 
     auto evmouse = MouseEventHandler::create();
 
@@ -30,9 +36,9 @@ bool Button::init(std::string file){
         }
     });
 
-    evmouse->test_var = 12;
-
     addEventHandler(evmouse);
+
+    return true;
 }
 
 void Button::setOnClick(std::function<void()> action) {

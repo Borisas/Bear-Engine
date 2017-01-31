@@ -4,17 +4,34 @@ using namespace BearEngine;
 
 
 std::shared_ptr<BearEngine::Layer> Layer::create(){
-    return std::make_shared<Layer>(Layer());
+    auto ptr = std::make_shared<Layer>(Layer());
+    ptr->init();
+    return ptr;
 }
 std::shared_ptr<BearEngine::Layer> Layer::create(BearEngine::Size container_size){
-    return std::make_shared<Layer>(Layer(container_size));
+    auto ptr = std::make_shared<Layer>(Layer());
+    ptr->initWithSize(container_size);
+    return ptr;
 }
 
 Layer::Layer(){}
 
-Layer::Layer(Size contsz){
+
+bool Layer::init(){
+    if(!Node::init())
+        return false;
+
+    return true;
+};
+bool Layer::initWithSize(Size contsz){
+
+    if(!Node::init())
+        return false;
+
     setContentSize(contsz);
+    return true;
 }
+
 
 Layer::~Layer(){}
 

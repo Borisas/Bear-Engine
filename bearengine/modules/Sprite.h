@@ -14,6 +14,9 @@ namespace BearEngine {
 
     public:
 
+        virtual bool init() override;
+        virtual bool initWithFile(std::string file);
+
         static std::shared_ptr<BearEngine::Sprite> create();
         static std::shared_ptr<BearEngine::Sprite> create(std::string file);
 
@@ -31,8 +34,6 @@ namespace BearEngine {
 
         Sprite();
         Sprite(std::string file);
-
-        bool initWithFile(std::string file);
 
     };
 };

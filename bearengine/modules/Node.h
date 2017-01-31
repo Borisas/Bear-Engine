@@ -24,7 +24,7 @@ namespace BearEngine {
 
         virtual ~Node();
 
-        virtual bool init() {};
+        virtual bool init();
         virtual void draw(BearEngine::NodeTransform) {};
         virtual void update(float dt) {};
 

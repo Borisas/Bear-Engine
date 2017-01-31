@@ -11,18 +11,19 @@ namespace BearEngine {
 
     public:
 
+        virtual ~Layer();
+
+        virtual bool init() override;
+        virtual bool initWithSize(BearEngine::Size);
+
         static std::shared_ptr<BearEngine::Layer> create();
         static std::shared_ptr<BearEngine::Layer> create(BearEngine::Size);
-
-
-        virtual ~Layer();
 
         void draw(BearEngine::NodeTransform) override;
 
     protected:
 
         Layer();
-        Layer(BearEngine::Size);
 
     };
 };

@@ -13,25 +13,23 @@ namespace BearEngine {
 
     public:
 
+        virtual ~Button(){};
+
+        virtual bool init() override;
+        virtual bool initWithFile(std::string file) override;
+
         static std::shared_ptr<BearEngine::Button> create();
         static std::shared_ptr<BearEngine::Button> create(std::string file);
 
-        virtual ~Button(){};
-
         void setOnClick(std::function<void()>);
 
-        int test = -1;
-
-
     private:
-
 
         std::function<void()> _on_click = [](){};
 
     protected:
 
         Button();
-        bool init(std::string file);
     };
 };
 

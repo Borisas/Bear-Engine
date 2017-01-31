@@ -15,8 +15,6 @@ namespace BearEngine {
     class EventHandler {
     public:
         virtual void handleEvents(std::vector<SDL_Event>&) = 0;
-
-        int test_var = -1;
     };
 
     class MouseEventHandler : public BearEngine::EventHandler{

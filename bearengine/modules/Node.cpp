@@ -4,12 +4,19 @@ using namespace BearEngine;
 using std::cout;
 
 std::shared_ptr<BearEngine::Node> Node::create(){
-    return std::make_shared<Node>( Node() );
+    auto ptr = std::make_shared<Node>( Node() );
+    ptr->init();
+    return ptr;
 }
+
 
 Node::Node() {}
 Node::~Node() {
-    cout << "NODE DELETE CALLED(" << this << ")" << '\n';
+    //cout << "NODE DELETE CALLED(" << this << ")" << '\n';
+}
+
+bool Node::init(){
+    return true;
 }
 
 void Node::addChild(std::shared_ptr<BearEngine::Node> ch, int z) {

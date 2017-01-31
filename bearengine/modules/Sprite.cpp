@@ -10,6 +10,17 @@ std::shared_ptr<BearEngine::Sprite> Sprite::create(std::string file){
     return std::make_shared<Sprite>(Sprite(file));
 }
 
+bool Sprite::init(){
+    return true;
+}
+
+bool Sprite::initWithFile(std::string file) {
+    _text = Texture(file);
+    setContentSize(Size(_text.getWidth(), _text.getHeight()));
+    return true;
+}
+
+
 Sprite::Sprite(){};
 Sprite::Sprite(std::string file){
     initWithFile(file);
@@ -37,7 +48,3 @@ void Sprite::update(float dt){
 
 }
 
-bool Sprite::initWithFile(std::string file) {
-    _text = Texture(file);
-    setContentSize(Size(_text.getWidth(), _text.getHeight()));
-}
