@@ -1,5 +1,7 @@
 #include <iostream>
-#include "SDL.h"
+//#include "SDL.h"
+
+#include "SDL2/SDL.h"
 
 #include "bearengine.h"
 
@@ -30,6 +32,8 @@ int main(int argc, char** argv) {
     button->setOnClick([](){
        std::cout << "LOL\n";
     });
+
+    std::cout << button << '\n';
 
     test_layer->addChild(button);
 

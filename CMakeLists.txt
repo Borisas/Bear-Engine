@@ -7,26 +7,40 @@ set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -std=c++11")
 
 # SDL2
 # =======
-set(SDL2_INCLUDE
-        ${PROJECT_SOURCE_DIR}/lib/SDL2-2.0.5/x86_64-w64-mingw32/include/SDL2
-        ${PROJECT_SOURCE_DIR}/lib/SDL2_image-2.0.1/x86_64-w64-mingw32/include/SDL2
-        ${PROJECT_SOURCE_DIR}/lib/SDL2_ttf-2.0.14/x86_64-w64-mingw32/include/SDL2
-)
-set(SDL2_LIB
-        ${PROJECT_SOURCE_DIR}/lib/SDL2-2.0.5/x86_64-w64-mingw32/lib/libSDL2main.a
-        ${PROJECT_SOURCE_DIR}/lib/SDL2-2.0.5/x86_64-w64-mingw32/lib/libSDL2.a
-        ${PROJECT_SOURCE_DIR}/lib/SDL2_image-2.0.1/x86_64-w64-mingw32/lib/libSDL2_image.a
-        ${PROJECT_SOURCE_DIR}/lib/SDL2_ttf-2.0.14/x86_64-w64-mingw32/lib/libSDL2_ttf.a
-        )
+if(WIN32)
+    set(SDL2_INCLUDE
+            ${PROJECT_SOURCE_DIR}/lib/SDL2-2.0.5/x86_64-w64-mingw32/include/SDL2
+            ${PROJECT_SOURCE_DIR}/lib/SDL2_image-2.0.1/x86_64-w64-mingw32/include/SDL2
+            ${PROJECT_SOURCE_DIR}/lib/SDL2_ttf-2.0.14/x86_64-w64-mingw32/include/SDL2
+    )
+    set(SDL2_LIB
+            ${PROJECT_SOURCE_DIR}/lib/SDL2-2.0.5/x86_64-w64-mingw32/lib/libSDL2main.a
+            ${PROJECT_SOURCE_DIR}/lib/SDL2-2.0.5/x86_64-w64-mingw32/lib/libSDL2.a
+            ${PROJECT_SOURCE_DIR}/lib/SDL2_image-2.0.1/x86_64-w64-mingw32/lib/libSDL2_image.a
+            ${PROJECT_SOURCE_DIR}/lib/SDL2_ttf-2.0.14/x86_64-w64-mingw32/lib/libSDL2_ttf.a
+            )
 
-# -SDL2_DLL FILES
-file(GLOB SDL2_DLL
-        ${PROJECT_SOURCE_DIR}/lib/SDL2-2.0.5/x86_64-w64-mingw32/bin/*.dll
-        ${PROJECT_SOURCE_DIR}/lib/SDL2_image-2.0.1/x86_64-w64-mingw32/bin/*.dll
-        ${PROJECT_SOURCE_DIR}/lib/SDL2_ttf-2.0.14/x86_64-w64-mingw32/bin/*.dll)
+    # -SDL2_DLL FILES
+    file(GLOB SDL2_DLL
+            ${PROJECT_SOURCE_DIR}/lib/SDL2-2.0.5/x86_64-w64-mingw32/bin/*.dll
+            ${PROJECT_SOURCE_DIR}/lib/SDL2_image-2.0.1/x86_64-w64-mingw32/bin/*.dll
+            ${PROJECT_SOURCE_DIR}/lib/SDL2_ttf-2.0.14/x86_64-w64-mingw32/bin/*.dll)
 
 
-file(COPY ${SDL2_DLL} DESTINATION ${PROJECT_BINARY_DIR}/)
+    file(COPY ${SDL2_DLL} DESTINATION ${PROJECT_BINARY_DIR}/)
+endif(WIN32)
+if(UNIX)
+    INCLUDE(FindPkgConfig)
+
+    PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
+    PKG_SEARCH_MODULE(SDL2IMAGE REQUIRED SDL2_image >= 2.0.0)
+    PKG_SEARCH_MODULE(SDL2TTF REQUIRED SDL2_ttf >= 2.0.0)
+
+    set(SDL2_LIB -lSDL2 -lSDL2_image -lSDL2_ttf -lGL)
+
+    set(SDL2_INCLUDE ${SDL2_INCLUDE_DIRS} ${SDL2IMAGE_INCLUDE_DIRS} ${SDL2TTF_INCLUDE_DIRS})
+endif(UNIX)
+
 # =======
 
 # PROJECT-FILES
@@ -56,14 +70,21 @@ endforeach()
 # =============
 
 # Finalising
-set(FINAL_INCLUDE ${SDL2_INCLUDE} ${ENGINE_INCLUDE_DIR})
-set(FINAL_LINKER
-        -lmingw32
-        ${SDL2_LIB}
-        -lopengl32
-        -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid
-)
+if(WIN32)
+    set(FINAL_INCLUDE ${SDL2_INCLUDE} ${ENGINE_INCLUDE_DIR})
+    set(FINAL_LINKER
+            -lmingw32
+            ${SDL2_LIB}
+            -lopengl32
+            -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid
+    )
+endif(WIN32)
+if(UNIX)
+    SET(FINAL_INCLUDE ${SDL2_INCLUDE} ${ENGINE_INCLUDE_DIR})
+    SET(FINAL_LINKER ${SDL2_LIB})
+endif(UNIX)
 # =============
+
 
 include_directories(${FINAL_INCLUDE})
 

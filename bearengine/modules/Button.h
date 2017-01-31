@@ -20,6 +20,8 @@ namespace BearEngine {
 
         void setOnClick(std::function<void()>);
 
+        int test = -1;
+
 
     private:
 
@@ -29,7 +31,7 @@ namespace BearEngine {
     protected:
 
         Button();
-        Button(std::string file);
+        bool init(std::string file);
     };
 };
 

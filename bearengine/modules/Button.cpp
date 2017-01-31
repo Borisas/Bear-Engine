@@ -7,19 +7,26 @@ std::shared_ptr<BearEngine::Button> Button::create(){
     return std::make_shared<Button>(Button());
 }
 std::shared_ptr<BearEngine::Button> Button::create(std::string file){
-    return std::make_shared<Button>( Button(file) );
+//    return std::make_shared<Button>( Button(file) );
+    auto ptr = std::make_shared<Button>( Button() );
+    ptr->init(file);
+    return ptr;
 }
 
 Button::Button(){}
 
-Button::Button(std::string file){
+bool Button::init(std::string file){
     initWithFile(file);
+
+    test = 4;
 
     auto evmouse = MouseEventHandler::create();
 
-    evmouse->setOnMouseClick([&](const SDL_Event& e){
+    std::cout << this << '\n';
+
+    evmouse->setOnMouseClick( [this](const SDL_Event& e){
         if(e.motion.x > 10 && e.motion.y > 10) {
-            _on_click();
+            this->_on_click();
         }
     });
 

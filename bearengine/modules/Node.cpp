@@ -178,7 +178,6 @@ void Node::_loop_tree(float dt, std::vector<SDL_Event> & events) {
 
     if(_ev_handlers.size() > 0){
         for(auto eh : _ev_handlers){
-            std::cout << eh << ":" << eh->test_var << '\n';
             eh->handleEvents(events);
         }
     }
@@ -197,7 +196,6 @@ void Node::_loop_tree(float dt, std::vector<SDL_Event> & events, BearEngine::Nod
 
     if(_ev_handlers.size() > 0){
         for(auto eh : _ev_handlers){
-            std::cout << eh << ":" << eh->test_var << '\n';
             eh->handleEvents(events);
         }
     }
