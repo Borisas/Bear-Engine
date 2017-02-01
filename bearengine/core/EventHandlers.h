@@ -15,6 +15,9 @@ namespace BearEngine {
 
     class EventHandler {
     public:
+
+        virtual bool init(){};
+
         virtual void handleEvents(std::vector<SDL_Event>&, BearEngine::NodeTransform) = 0;
     };
 
@@ -26,6 +29,7 @@ namespace BearEngine {
 
         MouseEventHandler(){};
         virtual ~MouseEventHandler(){};
+
 
         void handleEvents(std::vector<SDL_Event>&, BearEngine::NodeTransform) override;
 

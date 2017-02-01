@@ -65,7 +65,7 @@ endif(UNIX)
 
 # PROJECT-FILES
 # =============
-set(SOURCE_FILES src/main.cpp bearengine/modules/Texture.cpp bearengine/modules/Texture.h bearengine/bearengine.h bearengine/core/Organizer.cpp bearengine/core/Organizer.h bearengine/core/Structures.h bearengine/modules/Node.cpp bearengine/modules/Node.h bearengine/modules/Sprite.cpp bearengine/modules/Sprite.h bearengine/modules/Scene.cpp bearengine/modules/Scene.h bearengine/modules/Layer.cpp bearengine/modules/Layer.h bearengine/core/EventHandlers.cpp bearengine/core/EventHandlers.h bearengine/modules/Button.cpp bearengine/modules/Button.h bearengine/core/Macros.h bearengine/modules/Label.cpp bearengine/modules/Label.h)
+set(SOURCE_FILES src/main.cpp bearengine/modules/Texture.cpp bearengine/modules/Texture.h bearengine/bearengine.h bearengine/core/Organizer.cpp bearengine/core/Organizer.h bearengine/core/Structures.h bearengine/modules/Node.cpp bearengine/modules/Node.h bearengine/modules/Sprite.cpp bearengine/modules/Sprite.h bearengine/modules/Scene.cpp bearengine/modules/Scene.h bearengine/modules/Layer.cpp bearengine/modules/Layer.h bearengine/core/EventHandlers.cpp bearengine/core/EventHandlers.h bearengine/modules/Button.cpp bearengine/modules/Button.h bearengine/core/Macros.h bearengine/modules/Label.cpp bearengine/modules/Label.h src/Game/GameScene.cpp src/Game/GameScene.h)
 
 # ENGINE
 SET(ENGINE_INCLUDE_DIR
