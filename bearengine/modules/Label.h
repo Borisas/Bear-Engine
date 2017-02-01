@@ -20,7 +20,7 @@ namespace BearEngine {
         virtual ~Label();
 
         static std::shared_ptr<BearEngine::Label> create();
-        static std::shared_ptr<BearEngine::Label> createWithTTF(std::string, std::string, unsigned int);
+        static std::shared_ptr<BearEngine::Label> createWithTTF(std::string text, std::string font, unsigned int fontsize);
 
         bool init() override;
         bool initWithTTF(std::string, std::string, unsigned int);

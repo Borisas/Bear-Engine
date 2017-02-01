@@ -51,6 +51,7 @@ namespace BearEngine {
         BearEngine::Rectangle                   getBoundingBox();
         BearEngine::NodeTransform               getNodeTransform();
         int                                     getZIndex();
+//        BearEngine::Rectangle                   getTransformOnScreen();
         const std::vector<std::shared_ptr<BearEngine::Node> >&   getChildren();
 
     protected:

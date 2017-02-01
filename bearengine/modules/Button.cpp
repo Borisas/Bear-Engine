@@ -28,10 +28,13 @@ bool Button::initWithFile(std::string file){
 
     auto evmouse = MouseEventHandler::create();
 
-    std::cout << this << '\n';
+    evmouse->setOnMouseClick( [this](const SDL_Event& e, BearEngine::NodeTransform transform){
 
-    evmouse->setOnMouseClick( [this](const SDL_Event& e){
-        if(e.motion.x > 10 && e.motion.y > 10) {
+        if(     e.motion.x - transform.position.x > (this->getAnchorPoint().x -1) * transform.contentSize.width &&
+                e.motion.x - transform.position.x < this->getAnchorPoint().x  * transform.contentSize.width &&
+                e.motion.y - transform.position.y > (this->getAnchorPoint().y -1) * transform.contentSize.height &&
+                e.motion.y - transform.position.y < this->getAnchorPoint().y * transform.contentSize.height
+                ) {
             this->_on_click();
         }
     });

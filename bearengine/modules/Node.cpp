@@ -121,6 +121,7 @@ NodeTransform Node::getNodeTransform() {
             getPosition(),
             getAnchorPoint(),
             getScale(),
+            {1.f,1.f},
             getContentSize(),
             getColor(),
             getZIndex()
@@ -129,6 +130,24 @@ NodeTransform Node::getNodeTransform() {
 int Node::getZIndex() {
     return _local_z_index;
 }
+
+//BearEngine::Rectangle Node::getTransformOnScreen() {
+//    auto rect = BearEngine::Rectangle();
+//
+//
+//    auto node = this;
+//
+//    while(node != nullptr){
+//
+//        rect.x += node->getPosition().x - node->getAnchorPoint().x * node->getContentSize().width * node->getScale().x;
+//        rect.y += node->getPosition().y - node->getAnchorPoint().y * node->getContentSize().height * node->getScale().y;
+//
+//        node = node->_parent;
+//    }
+//
+//    return rect;
+//}
+
 const std::vector<std::shared_ptr<BearEngine::Node> >& Node::getChildren(){
     return _children;
 }
@@ -141,13 +160,13 @@ NodeTransform Node::_generate_transform(BearEngine::NodeTransform t) {
 
     // parent (0,0) point
     Point2 parent_real_pos = {
-        t.position.x - t.anchorPoint.x * t.contentSize.width,
-        t.position.y - t.anchorPoint.y * t.contentSize.height
+        t.position.x - t.anchorPoint.x * t.contentSize.width * t.scale.x,
+        t.position.y - t.anchorPoint.y * t.contentSize.height * t.scale.y
     };
 
     Point2 my_pos = {
-            parent_real_pos.x + getPosition().x,
-            parent_real_pos.y + getPosition().y
+            parent_real_pos.x + getPosition().x *t.scale.x,
+            parent_real_pos.y + getPosition().y *t.scale.y
     };
 
     Vector2 _scale = {
@@ -159,6 +178,7 @@ NodeTransform Node::_generate_transform(BearEngine::NodeTransform t) {
         my_pos,
         getAnchorPoint(),
         _scale,
+        t.scale,
         getContentSize(),
         getColor(),
         getZIndex()
@@ -185,7 +205,7 @@ void Node::_loop_tree(float dt, std::vector<SDL_Event> & events) {
 
     if(_ev_handlers.size() > 0){
         for(auto eh : _ev_handlers){
-            eh->handleEvents(events);
+            eh->handleEvents(events,my_transform);
         }
     }
 
@@ -203,7 +223,7 @@ void Node::_loop_tree(float dt, std::vector<SDL_Event> & events, BearEngine::Nod
 
     if(_ev_handlers.size() > 0){
         for(auto eh : _ev_handlers){
-            eh->handleEvents(events);
+            eh->handleEvents(events,my_transform);
         }
     }
 

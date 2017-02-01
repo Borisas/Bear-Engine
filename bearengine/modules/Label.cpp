@@ -49,6 +49,7 @@ void Label::draw(BearEngine::NodeTransform transform){
         _fresh = true;
     }
 
+
     float x0 = transform.position.x - transform.anchorPoint.x * (transform.contentSize.width * transform.scale.x);
     float y0 = transform.position.y - transform.anchorPoint.y * (transform.contentSize.height * transform.scale.y);
     float x1 = transform.position.x + (1-transform.anchorPoint.x) * (transform.contentSize.width * transform.scale.x);
@@ -134,6 +135,7 @@ std::string Label::getText(){
 
 void Label::_regenerate_texture() {
     glGenTextures(1, &_texture);
+    glBindTexture(GL_TEXTURE_2D, _texture);
     SDL_Surface * sdl_label = TTF_RenderText_Blended(
             _font,
             _text.c_str(),
@@ -148,7 +150,6 @@ void Label::_regenerate_texture() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, sdl_label->w, sdl_label->h, 0, GL_BGRA,
                  GL_UNSIGNED_BYTE, sdl_label->pixels);
-    glBindTexture(GL_TEXTURE_2D, _texture);
 
     setContentSize({sdl_label->w, sdl_label->h});
 

@@ -90,6 +90,7 @@ namespace BearEngine {
                 BearEngine::Point2  _position,
                 BearEngine::Point2  _anchorPoint,
                 BearEngine::Vector2 _scale,
+                BearEngine::Vector2 _pscale,
                 BearEngine::Size    _contentSize,
                 BearEngine::Color4f _color,
                 int                 _zIndex
@@ -97,6 +98,7 @@ namespace BearEngine {
                 position(_position),
                 anchorPoint(_anchorPoint),
                 scale(_scale),
+                parentScale(_pscale),
                 contentSize(_contentSize),
                 color(_color),
                 zIndex(_zIndex)
@@ -110,6 +112,7 @@ namespace BearEngine {
         BearEngine::Point2  position;
         BearEngine::Point2  anchorPoint;
         BearEngine::Vector2 scale;
+        BearEngine::Vector2 parentScale;
         BearEngine::Size    contentSize;
         BearEngine::Color4f color;
         int                 zIndex;

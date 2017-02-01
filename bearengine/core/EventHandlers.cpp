@@ -5,33 +5,33 @@ using namespace BearEngine;
 // ========
 // MOUSE EVENT HANDLER
 // ========
-void MouseEventHandler::handleEvents(std::vector<SDL_Event> & events) {
+void MouseEventHandler::handleEvents(std::vector<SDL_Event> & events, BearEngine::NodeTransform transform) {
 
     for(auto e : events){
 
         if(e.type == SDL_MOUSEBUTTONDOWN){
-            _on_mouse_click(e);
+            _on_mouse_click(e, transform);
         }
         else if(e.type == SDL_MOUSEBUTTONUP){
-            _on_mouse_release(e);
+            _on_mouse_release(e, transform);
         }
         else if(e.type == SDL_MOUSEMOTION){
-            _on_mouse_move(e);
+            _on_mouse_move(e, transform);
         }
 
     }
 
 }
 
-void MouseEventHandler::setOnMouseClick(std::function<void(const SDL_Event &e)> action) {
+void MouseEventHandler::setOnMouseClick(std::function<void(const SDL_Event &e, BearEngine::NodeTransform transform)> action) {
     _on_mouse_click = action;
 }
 
-void MouseEventHandler::setOnMouseRelease(std::function<void(const SDL_Event &e)> action) {
+void MouseEventHandler::setOnMouseRelease(std::function<void(const SDL_Event &e, BearEngine::NodeTransform transform)> action) {
     _on_mouse_release = action;
 }
 
-void MouseEventHandler::setOnMouseMove(std::function<void(const SDL_Event &e)> action) {
+void MouseEventHandler::setOnMouseMove(std::function<void(const SDL_Event &e, BearEngine::NodeTransform transform)> action) {
     _on_mouse_move = action;
 }
 
@@ -40,7 +40,7 @@ void MouseEventHandler::setOnMouseMove(std::function<void(const SDL_Event &e)> a
 // ========
 // KEYBOARD EVENT HANDLER
 // ========
-void KeyboardEventHandler::handleEvents(std::vector<SDL_Event> & events) {
+void KeyboardEventHandler::handleEvents(std::vector<SDL_Event> & events, BearEngine::NodeTransform) {
 
     for(auto e : events){
         if(e.type == SDL_KEYDOWN){
