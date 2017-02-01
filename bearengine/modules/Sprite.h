@@ -14,17 +14,17 @@ namespace BearEngine {
 
     public:
 
+        virtual ~Sprite();
+
         virtual bool init() override;
         virtual bool initWithFile(std::string file);
 
         static std::shared_ptr<BearEngine::Sprite> create();
         static std::shared_ptr<BearEngine::Sprite> create(std::string file);
 
-        virtual ~Sprite();
 
 
         virtual void draw(BearEngine::NodeTransform) override;
-        virtual void update(float dt) override;
 
     private:
 
@@ -33,7 +33,6 @@ namespace BearEngine {
     protected:
 
         Sprite();
-        Sprite(std::string file);
 
     };
 };

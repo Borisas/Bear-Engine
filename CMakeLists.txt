@@ -12,12 +12,14 @@ if(WIN32)
             ${PROJECT_SOURCE_DIR}/lib/SDL2-2.0.5/x86_64-w64-mingw32/include/SDL2
             ${PROJECT_SOURCE_DIR}/lib/SDL2_image-2.0.1/x86_64-w64-mingw32/include/SDL2
             ${PROJECT_SOURCE_DIR}/lib/SDL2_ttf-2.0.14/x86_64-w64-mingw32/include/SDL2
+            ${PROJECT_SOURCE_DIR}/lib/freetype/include
     )
     set(SDL2_LIB
             ${PROJECT_SOURCE_DIR}/lib/SDL2-2.0.5/x86_64-w64-mingw32/lib/libSDL2main.a
             ${PROJECT_SOURCE_DIR}/lib/SDL2-2.0.5/x86_64-w64-mingw32/lib/libSDL2.a
             ${PROJECT_SOURCE_DIR}/lib/SDL2_image-2.0.1/x86_64-w64-mingw32/lib/libSDL2_image.a
             ${PROJECT_SOURCE_DIR}/lib/SDL2_ttf-2.0.14/x86_64-w64-mingw32/lib/libSDL2_ttf.a
+            ${PROJECT_SOURCE_DIR}/lib/freetype/lib/libfreetype.dll.a
             )
 
     # -SDL2_DLL FILES
@@ -45,7 +47,7 @@ endif(UNIX)
 
 # PROJECT-FILES
 # =============
-set(SOURCE_FILES src/main.cpp bearengine/modules/Texture.cpp bearengine/modules/Texture.h bearengine/bearengine.h bearengine/core/Organizer.cpp bearengine/core/Organizer.h bearengine/core/Structures.h bearengine/modules/Node.cpp bearengine/modules/Node.h bearengine/modules/Sprite.cpp bearengine/modules/Sprite.h bearengine/modules/Scene.cpp bearengine/modules/Scene.h bearengine/modules/Layer.cpp bearengine/modules/Layer.h bearengine/core/EventHandlers.cpp bearengine/core/EventHandlers.h bearengine/modules/Button.cpp bearengine/modules/Button.h bearengine/core/Macros.h)
+set(SOURCE_FILES src/main.cpp bearengine/modules/Texture.cpp bearengine/modules/Texture.h bearengine/bearengine.h bearengine/core/Organizer.cpp bearengine/core/Organizer.h bearengine/core/Structures.h bearengine/modules/Node.cpp bearengine/modules/Node.h bearengine/modules/Sprite.cpp bearengine/modules/Sprite.h bearengine/modules/Scene.cpp bearengine/modules/Scene.h bearengine/modules/Layer.cpp bearengine/modules/Layer.h bearengine/core/EventHandlers.cpp bearengine/core/EventHandlers.h bearengine/modules/Button.cpp bearengine/modules/Button.h bearengine/core/Macros.h bearengine/modules/Label.cpp bearengine/modules/Label.h)
 
 # ENGINE
 SET(ENGINE_INCLUDE_DIR
@@ -76,7 +78,7 @@ if(WIN32)
             -lmingw32
             ${SDL2_LIB}
             -lopengl32
-            -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid
+            -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -lfreetype
     )
 endif(WIN32)
 if(UNIX)

@@ -20,6 +20,11 @@ bool Organizer::initGame() {
         _gameloop = false;
         return false;
     }
+    if(TTF_Init() == -1){
+        cout << "SDL Error: " << SDL_GetError() << '\n';
+        _gameloop = false;
+        return false;
+    }
 
     _window = SDL_CreateWindow(
             _gamename.c_str(),
@@ -55,6 +60,7 @@ void Organizer::destroyGame() {
     SDL_DestroyWindow(_window);
     SDL_Quit();
     IMG_Quit();
+    TTF_Quit();
 }
 
 void Organizer::runGame() {

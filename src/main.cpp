@@ -21,28 +21,28 @@ int main(int argc, char** argv) {
 
     test_layer->setColor({0.9f,0.9f,0.9f,1.f});
 
-    auto ev = BE::MouseEventHandler::create();
-    ev->setOnMouseClick([&](const SDL_Event & e){
-        std::cout << "MOUSE CLICK" << '\n';
-    });
-    test_layer->addEventHandler(ev);
-
-    auto button = BE::Button::create("res/inner/img_sec.png");
-    button->setOnClick([](){
-       std::cout << "LOL\n";
-    });
-
-    std::cout << button << '\n';
-
-    test_layer->addChild(button);
-
-    auto player = BE::Sprite::create("res/img.png");
-    player->setAnchorPoint({0.5f,0.5f});
-    player->setPosition({
-            test_layer->getContentSize().width/2,
-            test_layer->getContentSize().height/2
-                       });
-    test_layer->addChild(player);
+//    auto ev = BE::MouseEventHandler::create();
+//    ev->setOnMouseClick([&](const SDL_Event & e){
+//        std::cout << "MOUSE CLICK" << '\n';
+//    });
+//    test_layer->addEventHandler(ev);
+//
+//    auto button = BE::Button::create("res/inner/img_sec.png");
+//    button->setOnClick([](){
+//       std::cout << "LOL\n";
+//    });
+//
+//    std::cout << button << '\n';
+//
+//    test_layer->addChild(button);
+//
+//    auto player = BE::Sprite::create("res/img.png");
+//    player->setAnchorPoint({0.5f,0.5f});
+//    player->setPosition({
+//            test_layer->getContentSize().width/2,
+//            test_layer->getContentSize().height/2
+//                       });
+//    test_layer->addChild(player);
 
     auto top = BE::Scene::create();
     top->addChild(test_layer);

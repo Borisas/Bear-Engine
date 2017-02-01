@@ -4,10 +4,15 @@ using namespace BearEngine;
 using std::string;
 
 std::shared_ptr<BearEngine::Sprite> Sprite::create(){
-    return std::make_shared<Sprite>(Sprite());
+    auto ptr = std::make_shared<Sprite>(Sprite());
+    ptr->init();
+    return ptr;
 }
+
 std::shared_ptr<BearEngine::Sprite> Sprite::create(std::string file){
-    return std::make_shared<Sprite>(Sprite(file));
+    auto ptr = std::make_shared<Sprite>(Sprite());
+    ptr->initWithFile(file);
+    return ptr;
 }
 
 bool Sprite::init(){
@@ -22,9 +27,6 @@ bool Sprite::initWithFile(std::string file) {
 
 
 Sprite::Sprite(){};
-Sprite::Sprite(std::string file){
-    initWithFile(file);
-}
 
 Sprite::~Sprite(){};
 
@@ -42,9 +44,6 @@ void Sprite::draw(BearEngine::NodeTransform transform){
             transform.position.x + (1-transform.anchorPoint.x) * (transform.contentSize.width * transform.scale.x),
             transform.position.y + (1-transform.anchorPoint.y) * (transform.contentSize.height * transform.scale.y)
     );
-
-}
-void Sprite::update(float dt){
 
 }
 

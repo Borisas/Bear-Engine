@@ -12,5 +12,6 @@
 #include "modules/Scene.h"
 #include "modules/Layer.h"
 #include "modules/Button.h"
+#include "modules/Label.h"
 
 #endif
