@@ -30,10 +30,10 @@ bool Button::initWithFile(std::string file){
 
     evmouse->setOnMouseClick( [this](const SDL_Event& e, BearEngine::NodeTransform transform){
 
-        if(     e.motion.x - transform.position.x > (this->getAnchorPoint().x -1) * transform.contentSize.width &&
-                e.motion.x - transform.position.x < this->getAnchorPoint().x  * transform.contentSize.width &&
-                e.motion.y - transform.position.y > (this->getAnchorPoint().y -1) * transform.contentSize.height &&
-                e.motion.y - transform.position.y < this->getAnchorPoint().y * transform.contentSize.height
+        if(     e.motion.x - transform.position.x > (this->getAnchorPoint().x -1) * transform.contentSize.width * transform.scale.x &&
+                e.motion.x - transform.position.x < this->getAnchorPoint().x  * transform.contentSize.width * transform.scale.x &&
+                e.motion.y - transform.position.y > (this->getAnchorPoint().y -1) * transform.contentSize.height * transform.scale.y &&
+                e.motion.y - transform.position.y < this->getAnchorPoint().y * transform.contentSize.height * transform.scale.y
                 ) {
             this->_on_click();
         }

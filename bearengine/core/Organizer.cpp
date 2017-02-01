@@ -64,8 +64,14 @@ void Organizer::destroyGame() {
 }
 
 void Organizer::runGame() {
-
+    unsigned int stime = 0;
+    unsigned int etime = 0;
+    unsigned int last_time = 0;
+    const float goal_fps = 60.f;
     while(_gameloop){
+        last_time = stime;
+        stime = SDL_GetTicks();
+
 
         SDL_Event e;
 
@@ -82,13 +88,26 @@ void Organizer::runGame() {
         glClear(GL_COLOR_BUFFER_BIT);
 
         if(_scenes.size() > 0)
-            _scenes.top()->loopTree(0.0167f, events);
+            _scenes.top()->loopTree(std::abs((float)(stime-last_time) / 1000.f), events);
 
         SDL_GL_SwapWindow(_window);
+
+        etime = SDL_GetTicks();
+        if(stime-etime > (1.f/goal_fps) * 1000){
+            SDL_Delay(std::abs((int)((1.f/goal_fps) * 1000 - std::abs(etime-stime))));
+        }
     }
 }
 
+void Organizer::stopGame() {
+    _gameloop = false;
+}
+
 void Organizer::pushScene(std::shared_ptr<Scene> n){
+    _scenes.push(n);
+}
+void Organizer::replaceScene(std::shared_ptr<Scene> n){
+    _scenes.pop();
     _scenes.push(n);
 }
 

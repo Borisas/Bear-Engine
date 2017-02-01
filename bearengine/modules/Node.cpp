@@ -31,14 +31,14 @@ void Node::addChild(std::shared_ptr<BearEngine::Node> ch, int z) {
 
 void Node::removeChild(std::shared_ptr<BearEngine::Node> ch) {
 
-//    for(unsigned int i = 0; i < _children.size(); i++){
-//
-//        if(_children[i] == ch){
-//            _children[i]->_parent = nullptr;
-//            _children.erase(_children.begin()+i);
-//        }
-//
-//    }
+    for(unsigned int i = 0; i < _children.size(); i++){
+
+        if(_children[i] == ch){
+            _children[i]->_parent = nullptr;
+            _children.erase(_children.begin()+i);
+        }
+
+    }
 }
 
 void Node::removeFromParent() {

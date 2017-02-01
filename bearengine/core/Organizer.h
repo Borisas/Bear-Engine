@@ -6,6 +6,7 @@
 #include <vector>
 #include <stack>
 #include <memory>
+#include <cmath>
 
 #include "SDL.h"
 #include "SDL_ttf.h"
@@ -37,10 +38,12 @@ namespace BearEngine {
 
         bool initGame();
         void destroyGame();
+        void stopGame();
 
         void runGame();
 
         void pushScene(std::shared_ptr<Scene>);
+        void replaceScene(std::shared_ptr<Scene>);
 
         BearEngine::Size getWindowSize();
 
