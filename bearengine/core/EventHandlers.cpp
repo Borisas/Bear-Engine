@@ -65,3 +65,55 @@ void KeyboardEventHandler::unsetKeyEvent(Uint32 keycode) {
         _key_map.erase(found);
 }
 // ========
+
+
+
+SimpleKeyboardEventHandler::SimpleKeyboardEventHandler(){
+
+}
+SimpleKeyboardEventHandler::~SimpleKeyboardEventHandler(){
+
+}
+
+void SimpleKeyboardEventHandler::handleEvents(std::vector<SDL_Event>& events, BearEngine::NodeTransform){
+    for ( auto e : events) {
+        if ( e.type == SDL_KEYDOWN ) {
+            auto k = e.key.keysym.scancode;
+
+            if ( k == 225 || k == 229 ) {
+                _shift = true;
+            }
+            if ( k == 224 || k == 228 ) {
+                _ctrl = true;
+            }
+            if ( k == 226 || k == 230 ) {
+                _alt = true;
+            }
+
+            const char* scanCodeName = SDL_GetScancodeName(k);
+
+            auto keydata = Key(k,Util::KeycodeToChar(k, _shift),_shift,_ctrl,_alt,SDL_GetScancodeName(k));
+
+            onKeyDown(keydata);
+
+        }
+        else if ( e.type == SDL_KEYUP ) {
+            auto k = e.key.keysym.scancode;
+
+
+            if ( k == 225 || k == 229 ) {
+                _shift = false;
+            }
+            if ( k == 224 || k == 228 ) {
+                _ctrl = false;
+            }
+            if ( k == 226 || k == 230 ) {
+                _alt = false;
+            }
+
+            auto keydata = Key(k,Util::KeycodeToChar(k, _shift),_shift,_ctrl,_alt,SDL_GetScancodeName(k));
+
+            onKeyUp(keydata);
+        }
+    }
+}

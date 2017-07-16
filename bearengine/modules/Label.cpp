@@ -134,6 +134,8 @@ std::string Label::getText(){
 }
 
 void Label::_regenerate_texture() {
+
+
     glGenTextures(1, &_texture);
     glBindTexture(GL_TEXTURE_2D, _texture);
     SDL_Surface * sdl_label = TTF_RenderText_Blended(
@@ -146,6 +148,8 @@ void Label::_regenerate_texture() {
                     (int)(getColor().a*255)
             }
     );
+    catchError(sdl_label);
+    // SDL Error: Text has zero width;
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, sdl_label->w, sdl_label->h, 0, GL_BGRA,

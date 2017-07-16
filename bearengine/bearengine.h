@@ -5,6 +5,7 @@
 #include "core/Structures.h"
 #include "core/EventHandlers.h"
 #include "core/Macros.h"
+#include "core/Util.h"
 
 #include "modules/Texture.h"
 #include "modules/Node.h"

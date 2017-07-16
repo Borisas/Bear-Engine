@@ -16,5 +16,11 @@
 
 #define windowSize BearEngine::Organizer::getInstance().getWindowSize()
 
+#define BE_VAR(var) std::shared_ptr<BearEngine::var>
+
+#define catchError(var) \
+	if(var == NULL){ \
+		printf("SDL Error: %s", SDL_GetError()); \
+	}
 
 #endif //BEARENGINE_CMAKE_MACROS_H_H
